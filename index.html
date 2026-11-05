@@ -13,41 +13,18 @@
 <style>
 :root{--green:#16834a;--deep:#0b5932;--mint:#eaf8ef;--lime:#b9e7c7;--ink:#183329;--muted:#71847a;--line:#e1eee5;--white:#fff;--shadow:0 14px 40px #16452a12}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:#f5faf6;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:env(safe-area-inset-bottom)}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{display:flex;min-height:100vh}.sidebar{width:250px;background:#fff;border-right:1px solid var(--line);padding:26px 18px;display:flex;flex-direction:column;gap:25px;position:fixed;inset:0 auto 0 0;z-index:5}.brand{display:flex;align-items:center;gap:12px;padding:0 8px}.brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#2eaa64,#0c6639);display:grid;place-items:center;color:white;box-shadow:0 8px 18px #16834a33}.brand strong{font-size:16px;display:block}.brand small{color:var(--muted);font-size:11px}.nav{display:grid;gap:7px}.nav button{background:transparent;color:#60746a;text-align:left;padding:12px 13px;border-radius:12px;display:flex;gap:12px;align-items:center;font-weight:600}.nav button.active,.nav button:hover{background:var(--mint);color:var(--deep)}.nav svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}.side-note{margin-top:auto;background:linear-gradient(145deg,#e9f8ee,#f6fcf7);padding:16px;border-radius:16px;font-size:12px;color:#527060;line-height:1.6}.main{margin-left:250px;width:calc(100% - 250px);padding:30px 36px 60px;max-width:1500px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;gap:10px}.eyebrow{font-size:12px;color:var(--green);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.topbar h1{font-size:27px;margin:5px 0 0;letter-spacing:-.8px}.profile{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 13px;border:1px solid var(--line);border-radius:30px;color:#52675c;font-size:13px;cursor:pointer}.avatar{width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--green)}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{background:linear-gradient(115deg,#0d6738,#209653 65%,#55b878);border-radius:24px;padding:30px 34px;color:white;position:relative;overflow:hidden;box-shadow:0 18px 40px #167c4530}.hero:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff26;border-radius:50%;right:8%;top:-130px;box-shadow:0 0 0 35px #ffffff0a,0 0 0 75px #ffffff08}.hero-content{position:relative;z-index:1;max-width:610px}.hero h2{font-size:27px;margin:9px 0}.hero p{color:#d8f2e1;line-height:1.6;margin:0 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:11px 17px;border-radius:11px;background:var(--green);color:white;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}.btn.white{background:white;color:var(--deep)}.btn.soft{background:var(--mint);color:var(--deep)}.btn.outline{background:white;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#fff0ed;color:#b94737}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 28px}.stat,.panel,.unit-card,.game-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.stat{padding:17px 18px;display:flex;align-items:center;gap:13px}.stat-icon{width:40px;height:40px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center}.stat-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}.stat strong{font-size:21px;display:block}.stat small{color:var(--muted);font-size:11px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0 14px}.section-head h3{margin:0;font-size:17px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.units{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.unit-card{padding:17px;transition:.2s;cursor:pointer}.unit-card:hover{transform:translateY(-3px);border-color:#a8d9b8}.unit-top{display:flex;justify-content:space-between;align-items:center}.unit-number{font-size:11px;font-weight:800;color:var(--green);background:var(--mint);padding:6px 9px;border-radius:8px}.unit-card h4{margin:13px 0 5px}.unit-card p{font-size:12px;color:var(--muted);margin:0 0 13px}.progress{height:6px;background:#edf4ef;border-radius:8px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#39ae68,#8bd39e);border-radius:8px}.unit-foot{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:9px}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel{padding:20px}.panel h3{margin:0 0 14px;font-size:16px}.quick-list{display:grid;gap:10px}.quick-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;background:#f8fbf9}.quick-row .qicon{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:white;color:var(--green)}.quick-row strong{font-size:13px;display:block}.quick-row small{color:var(--muted);font-size:11px}.quick-row button{margin-left:auto}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}.field{background:#fff;border:1px solid #dce9df;border-radius:11px;padding:11px 13px;color:var(--ink);outline:none;min-width:0;font-size:16px}.field:focus{border-color:#65b982;box-shadow:0 0 0 3px #16834a12}.field.full{width:100%}.field-label{display:block;font-size:12px;font-weight:700;color:#60746a;margin:0 0 7px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-item{min-width:0}.form-item.wide{grid-column:1/-1}.word-list{display:grid;gap:8px}.word-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:white;border:1px solid var(--line);border-radius:12px}.word-row strong{font-size:14px}.word-row span{font-size:13px;color:var(--muted)}.icon-btn{width:33px;height:33px;border-radius:9px;background:#f3f8f4;color:#658071}.icon-btn:hover{background:#ffefed;color:#b94737}.empty{padding:35px;text-align:center;color:var(--muted);background:white;border:1px dashed #cbded0;border-radius:15px}.empty svg{width:32px;height:32px;color:#8ab99a}.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game-card{padding:18px;cursor:pointer;transition:.2s}.game-card:hover{transform:translateY(-3px);border-color:#a8d9b8}.game-icon{width:43px;height:43px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:20px}.game-card h4{margin:13px 0 5px}.game-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.game-area{max-width:760px;margin:15px auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);text-align:center}.game-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.question{font-size:30px;font-weight:800;margin:30px 0 8px;letter-spacing:-.7px;word-break:break-word}.subquestion{color:var(--muted);font-size:13px}.answer-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.answer-options button{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650;color:var(--ink)}.answer-options button:hover{border-color:#80c597;background:var(--mint)}.answer-options button.correct{background:#e4f7e9;border-color:#62bd7c;color:#17683a}.answer-options button.wrong{background:#fff0ed;border-color:#eaa397;color:#a33e31}.feedback{min-height:25px;font-size:13px;font-weight:700}.flashcard{min-height:210px;border-radius:18px;background:linear-gradient(145deg,#f0faf3,#e2f5e8);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;margin:22px 0;cursor:pointer}.flashcard .bigword{font-size:36px;font-weight:850;color:var(--deep);word-break:break-word;text-align:center}.flashcard small{color:#648170;margin-top:10px}.game-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:17px}.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}.match-grid button{padding:16px 10px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650}.match-grid button.selected{background:#e5f6ea;border-color:#54b778}.match-grid button.matched{opacity:.35;pointer-events:none}.toast{position:fixed;right:25px;bottom:25px;left:25px;max-width:420px;margin:0 auto;background:#164f30;color:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.25s;z-index:20;pointer-events:none;text-align:center}.toast.show{opacity:1;transform:none}.muted{color:var(--muted)}.small{font-size:12px}.hidden{display:none!important}.file-help{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px}
-.auth-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,#0d6738,#209653 65%,#55b878)}
-.auth-card{background:#fff;border-radius:22px;padding:32px 26px;width:100%;max-width:420px;box-shadow:0 25px 60px #00000030}
-.auth-card h2{margin:0 0 6px;font-size:22px;color:var(--deep)}
-.auth-card p{margin:0 0 22px;color:var(--muted);font-size:13px}
-.auth-card .field{margin-bottom:12px}
-.auth-card .btn{width:100%}
-.auth-switch{text-align:center;margin-top:14px;font-size:13px;color:var(--muted)}
-.auth-switch a{color:var(--green);font-weight:700;cursor:pointer;text-decoration:none}
 .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:10}
 .mobile-nav-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;max-width:600px;margin:0 auto}
 .mobile-nav button{background:transparent;color:#71847a;padding:8px 4px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:600}
 .mobile-nav button.active{color:var(--green);background:var(--mint)}
 .mobile-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
-@media(max-width:860px){.sidebar{display:none}.main{margin-left:0;width:100%;padding:16px 14px 100px}.mobile-nav{display:block}.topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}.profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}.hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}.stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}.units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}.form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}.question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}.flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}.section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}.toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}.auth-card{padding:26px 20px}}
+@media(max-width:860px){.sidebar{display:none}.main{margin-left:0;width:100%;padding:16px 14px 100px}.mobile-nav{display:block}.topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}.profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}.hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}.stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}.units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}.form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}.question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}.flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}.section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}.toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}}
 @media(max-width:400px){.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:15px}.hero h2{font-size:19px}}
 </style>
 </head>
 <body>
 
-<div id="authScreen" class="auth-wrap">
-  <div class="auth-card">
-    <h2 id="authTitle">Xush kelibsiz! 👋</h2>
-    <p id="authSubtitle">Hisobingizga kiring yoki yangi hisob yarating</p>
-    <input id="authEmail" class="field full" type="email" placeholder="Email" autocomplete="email">
-    <input id="authPassword" class="field full" type="password" placeholder="Parol (kamida 6 belgi)" autocomplete="current-password">
-    <button id="authBtn" class="btn" onclick="handleAuth()">Kirish</button>
-    <div class="auth-switch">
-      <span id="authSwitchText">Hisobingiz yo'qmi?</span>
-      <a onclick="toggleAuthMode()" id="authSwitchLink">Ro'yxatdan o'tish</a>
-    </div>
-    <p id="authError" class="small" style="color:#b94737;text-align:center;margin-top:12px;min-height:16px"></p>
-  </div>
-</div>
-
-<div id="appRoot" class="app hidden">
+<div id="appRoot" class="app">
 <aside class="sidebar">
  <div class="brand"><div class="brandmark"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-5-3-8-7-8-12 5 0 9 3 8 12Z"/><path d="M12 21c0-7 3-12 8-14 1 6-2 11-8 14Z"/></svg></div><div><strong>Essential Words</strong><small>English learning studio</small></div></div>
  <nav class="nav">
@@ -61,7 +38,7 @@
 </aside>
 
 <main class="main">
- <header class="topbar"><div><div class="eyebrow">YOUR DAILY ENGLISH HABIT</div><h1 id="pageTitle">O'rganishni boshlaymiz!</h1></div><div class="profile" onclick="logout()"><span class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span id="profileEmail">Mening lug'atim</span></div></header>
+ <header class="topbar"><div><div class="eyebrow">YOUR DAILY ENGLISH HABIT</div><h1 id="pageTitle">O'rganishni boshlaymiz!</h1></div><div class="profile"><span class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span id="profileEmail">Mening lug'atim</span></div></header>
 
  <section class="page active" id="home">
   <div class="hero"><div class="hero-content"><div class="eyebrow" style="color:#c9f0d5">BUGUNGI MAQSAD — 10 TA SO'Z</div><h2>Ingliz tilini o'yin orqali o'rganing</h2><p>Essential kitobingizdagi unitlarni qo'shing, so'zlarni ovoz chiqarib ayting va qiziqarli mashqlar bilan eslab qoling.</p><div class="hero-actions"><button class="btn white" onclick="showPage('add')">＋ So'z qo'shish</button><button class="btn" style="background:#ffffff24;color:white;border:1px solid #ffffff55" onclick="showPage('games')">O'yinlarni boshlash →</button></div></div></div>
@@ -97,7 +74,7 @@
 
  <section class="page" id="add"><div class="section-head"><div><h3>So'zlar va unit qo'shish</h3><p>Essential kitobingizdagi unitlarni shu yerga kiriting</p></div></div><div class="two-col"><div class="panel"><h3>Qo'lda so'z qo'shish</h3><div class="form-grid"><div class="form-item wide"><label class="field-label">Unit nomi yoki raqami</label><input id="unitName" class="field full" placeholder="Masalan: Unit 1"></div><div class="form-item"><label class="field-label">Inglizcha so'z</label><input id="englishWord" class="field full" placeholder="apple"></div><div class="form-item"><label class="field-label">O'zbekcha tarjimasi</label><input id="uzbekWord" class="field full" placeholder="olma"></div><div class="form-item wide"><button class="btn" style="width:100%" onclick="addWord()">＋ So'zni saqlash</button></div></div><p class="file-help">Har bir so'zni alohida kiriting. Bir xil unit nomini yozsangiz, so'zlar o'sha unitga qo'shiladi.</p></div>
  <div class="panel"><h3>Excel yoki CSV dan yuklash</h3><div style="border:1px dashed #b9d9c2;background:#f7fcf8;border-radius:14px;padding:23px;text-align:center"><div style="font-size:30px;color:var(--green)">⇧</div><strong>Faylni tanlang</strong><p class="small muted">.xlsx, .xls yoki .csv format</p><input id="excelFile" type="file" accept=".xlsx,.xls,.csv" class="field full" style="margin-top:8px"></div><div class="file-help"><b>Excel ustunlari:</b> Unit | English | Uzbek<br>Masalan: Unit 1 | apple | olma</div><button class="btn soft" style="width:100%;margin-top:12px" onclick="downloadTemplate()">Namunaviy CSV yuklab olish</button></div></div>
- <div class="panel" style="margin-top:16px"><h3>Ma'lumotlarni boshqarish</h3><p class="small muted">So'zlaringiz Supabase'da saqlanadi va barcha qurilmalaringizda sinxronlanadi.</p><div class="toolbar"><button class="btn outline" onclick="exportCSV()">So'zlarni CSV qilib saqlash</button><button class="btn danger" onclick="clearAll()">Barcha ma'lumotlarni o'chirish</button></div></div></section>
+ <div class="panel" style="margin-top:16px"><h3>Ma'lumotlarni boshqarish</h3><p class="small muted">So'zlaringiz bulutda saqlanadi va sinxronlanadi.</p><div class="toolbar"><button class="btn outline" onclick="exportCSV()">So'zlarni CSV qilib saqlash</button><button class="btn danger" onclick="clearAll()">Barcha ma'lumotlarni o'chirish</button></div></div></section>
 </main>
 
 <nav class="mobile-nav">
@@ -115,9 +92,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-/* ========================================================
-   SUPABASE SOZLAMALARI — TO'G'RI ANON KALIT
-   ======================================================== */
 const SUPABASE_URL = 'https://txkjaraohikuyoytiqdb.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4a2phcmFvaGlrdXlveXRpcWRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4OTU5MDksImV4cCI6MjEwOTQ3MTkwOX0.ACA6McC_TIDRPB69-bdcvjNLiBF69QZpmQkSVZqbQRs';
 
@@ -128,67 +102,11 @@ let currentUser = null;
 let words = [];
 let correctCount = 0, answerCount = 0;
 let selectedUnit = 'all', deck = [], idx = 0, flipped = false, score = 0, matchSelected = null, matched = 0, recognition = null;
-let authMode = 'login';
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
-
-function toggleAuthMode(){
-  authMode = authMode === 'login' ? 'signup' : 'login';
-  if(authMode === 'login'){
-    $('authTitle').textContent = 'Xush kelibsiz! 👋';
-    $('authSubtitle').textContent = "Hisobingizga kiring yoki yangi hisob yarating";
-    $('authBtn').textContent = 'Kirish';
-    $('authSwitchText').textContent = "Hisobingiz yo'qmi?";
-    $('authSwitchLink').textContent = "Ro'yxatdan o'tish";
-  } else {
-    $('authTitle').textContent = "Ro'yxatdan o'tish";
-    $('authSubtitle').textContent = 'Yangi hisob yarating — bepul';
-    $('authBtn').textContent = "Ro'yxatdan o'tish";
-    $('authSwitchText').textContent = 'Hisobingiz bormi?';
-    $('authSwitchLink').textContent = 'Kirish';
-  }
-  $('authError').textContent = '';
-}
-
-async function handleAuth(){
-  const email = $('authEmail').value.trim();
-  const password = $('authPassword').value;
-  $('authError').textContent = '';
-  if(!email || !password){ $('authError').textContent = 'Email va parolni kiriting'; return; }
-  if(password.length < 6){ $('authError').textContent = "Parol kamida 6 belgidan bo'lsin"; return; }
-  $('authBtn').disabled = true;
-  $('authBtn').textContent = 'Kuting...';
-  try{
-    if(authMode === 'login'){
-      const { error } = await sb.auth.signInWithPassword({ email, password });
-      if(error) throw error;
-    } else {
-      const { data, error } = await sb.auth.signUp({ email, password });
-      if(error) throw error;
-      if(data.user && !data.session){
-        toast('Emailingizga tasdiqlash havolasi yuborildi');
-        $('authError').textContent = 'Emailni tasdiqlang, keyin kiring';
-        $('authBtn').disabled = false; $('authBtn').textContent = "Ro'yxatdan o'tish";
-        return;
-      }
-    }
-  } catch(err){
-    $('authError').textContent = err.message || 'Xatolik yuz berdi';
-    $('authBtn').disabled = false;
-    $('authBtn').textContent = authMode === 'login' ? 'Kirish' : "Ro'yxatdan o'tish";
-  }
-}
-
-async function logout(){
-  if(!confirm('Hisobdan chiqishni xohlaysizmi?')) return;
-  await sb.auth.signOut();
-}
-
-function showAuth(){ $('authScreen').classList.remove('hidden'); $('appRoot').classList.add('hidden'); }
-function showApp(){ $('authScreen').classList.add('hidden'); $('appRoot').classList.remove('hidden'); }
 
 async function loadWords(){
   const { data, error } = await sb.from('words').select('*').order('created_at',{ascending:true});
@@ -247,7 +165,7 @@ function refresh(){
   $('statUnits').textContent = us.length;
   $('statLearned').textContent = words.filter(w => w.learned).length;
   $('statAccuracy').textContent = (answerCount ? Math.round(correctCount / answerCount * 100) : 0) + '%';
-  $('homeUnits').innerHTML = us.slice(0,3).map(unitCard).join('') || '<div class="empty" style="grid-column:1/-1">Boshlash uchun Essential kitobingizdan so\'zlar qo\'shing.</div>';
+  $('homeUnits').innerHTML = us.slice(0,3).map(unitCard).join('') || '<div class="empty" style="grid-column:1/-1">Boshlash uchun kitobingizdan so\'zlar qo\'shing.</div>';
   const opts = '<option value="all">Barcha unitlar</option>' + us.map(u => `<option value="${esc(u)}">${esc(u)}</option>`).join('');
   $('gameUnit').innerHTML = opts;
   $('gameUnit').value = selectedUnit;
@@ -542,28 +460,24 @@ function loadSheetJS(){
 }
 
 (async function init(){
-  const { data: { session } } = await sb.auth.getSession();
-  if(session && session.user){
-    currentUser = session.user;
-    $('profileEmail').textContent = session.user.email;
-    showApp();
-    await loadWords();
-  } else {
-    showAuth();
+  // Avtomatik maxfiy hisob yaratish orqali kirish
+  let { data: { session } } = await sb.auth.getSession();
+  
+  if(!session) {
+    const { data, error } = await sb.auth.signInAnonymously();
+    if (error) {
+      toast("Xatolik: Supabase'da Anonymous Sign-in yoqilmagan!");
+      console.error("Supabase Anonymous Sign-in xatosi:", error.message);
+      return;
+    }
+    session = data.session;
   }
 
-  sb.auth.onAuthStateChange(async (event, session) => {
-    if(event === 'SIGNED_IN' && session){
-      currentUser = session.user;
-      $('profileEmail').textContent = session.user.email;
-      showApp();
-      await loadWords();
-    } else if(event === 'SIGNED_OUT'){
-      currentUser = null;
-      words = []; correctCount = 0; answerCount = 0;
-      showAuth();
-    }
-  });
+  if(session && session.user) {
+    currentUser = session.user;
+    $('profileEmail').textContent = "Mening lug'atim";
+    await loadWords();
+  }
 })();
 </script>
 </body>
