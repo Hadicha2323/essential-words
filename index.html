@@ -254,11 +254,18 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
       <p class="small muted" style="margin-top:10px;line-height:1.6">Har bir so'zni alohida kiriting. Bir xil unit nomini yozsangiz, so'zlar o'sha unitga qo'shiladi.</p>
     </div>
     <div class="panel"><h3>Excel yoki CSV dan yuklash</h3>
-      <div style="border:1px dashed #b9d9c2;background:#f7fcf8;border-radius:14px;padding:23px;text-align:center">
-        <div style="font-size:30px;color:var(--green)">⇧</div><strong>Faylni tanlang</strong><p class="small muted">.xlsx, .xls yoki .csv format</p>
-        <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" class="field full" style="margin-top:8px">
+      <div style="border:1px dashed #b9d9c2;background:#f7fcf8;border-radius:14px;padding:20px">
+        <label class="field-label" style="margin-bottom:8px">Qaysi unitga qo'shilsin?</label>
+        <input id="excelTargetUnit" class="field full" placeholder="Masalan: Unit 5 (yangi yoki mavjud)" style="margin-bottom:12px">
+        
+        <div style="text-align:center">
+          <div style="font-size:28px;color:var(--green);margin-bottom:5px">⇧</div><strong>Faylni tanlang</strong><p class="small muted" style="margin:3px 0 8px">.xlsx, .xls yoki .csv</p>
+          <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" class="field full">
+        </div>
       </div>
-      <div class="small muted" style="margin-top:10px;line-height:1.6"><b>Excel ustunlari:</b> Unit | English | Uzbek<br>Dublikat so'zlar avtomatik tozalanadi.</div>
+      <div class="small muted" style="margin-top:10px;line-height:1.6">
+        <b>Eslatma:</b> Ushbu fayldagi barcha so'zlar yuqorida yozgan unitingizga (masalan "Unit 5" ga) qo'shiladi. Fayl ichida "Unit" ustuni bo'lishi shart emas. Dublikat so'zlar avtomatik tozalanadi.
+      </div>
       <button class="btn soft" style="width:100%;margin-top:12px" onclick="downloadTemplate()">Namunaviy CSV yuklab olish</button>
     </div>
   </div>
@@ -774,33 +781,47 @@ async function clearAll(){
   words = []; correctCount = 0; answerCount = 0; refresh(); toast("Tozalandi");
 }
 
+/* ============ UMUMIY SAHIFADAN EXCEL YUKLASH ============ */
 $('excelFile').addEventListener('change', async e => {
   const file = e.target.files[0]; if(!file) return;
+  const targetUnit = $('excelTargetUnit').value.trim();
+  
+  if(!targetUnit) {
+    toast("Iltimos, avval qaysi unitga qo'shishni yozing!");
+    e.target.value = '';
+    return;
+  }
+
+  toast("Fayl tahlil qilinmoqda...");
   try{
     const rows = await extractRows(file);
     const parsed = detectColumns(rows);
     const toInsert = [];
-    const existing = new Set(words.map(w => w.unit.toLowerCase() + '|' + w.en.toLowerCase()));
+    
+    // Bazadagi va fayl ichidagi dublikatlarni tozalash
+    const existing = new Set(words.filter(w => w.unit.toLowerCase() === targetUnit.toLowerCase()).map(w => w.en.toLowerCase().trim()));
     const seen = new Set();
     
     for(const p of parsed){
-      let unit = "Umumiy";
-      if(rows.some(r => /^unit/i.test(r[0]))) {
-         const row = rows.find(r => r.includes(p.en));
-         if(row && row[0]) unit = String(row[0]);
-      }
-      const key = unit.toLowerCase() + '|' + p.en.toLowerCase();
+      const key = p.en.toLowerCase().trim();
       if(existing.has(key) || seen.has(key)) continue;
-      seen.add(key); toInsert.push({ unit, en: p.en, uz: p.uz });
+      seen.add(key); 
+      toInsert.push({ unit: targetUnit, en: p.en, uz: p.uz });
     }
     
     if(toInsert.length){
       const { error } = await sb.from('words').insert(toInsert);
       if(error) throw error;
-      await loadWords(); toast(toInsert.length + " ta so'z yuklandi");
-    } else toast("Yangi so'z topilmadi.");
+      await loadWords(); 
+      toast(`✅ ${toInsert.length} ta so'z «${targetUnit}» ga qo'shildi.`);
+      $('excelTargetUnit').value = ''; // Tozalash
+    } else {
+      toast("Yangi so'z topilmadi (hammasi mavjud yoki fayl bo'sh).");
+    }
     e.target.value = '';
-  } catch(err) { toast("Xato: " + err.message); }
+  } catch(err) { 
+    toast("Xato: " + err.message); 
+  }
 });
 
 (async function init(){
