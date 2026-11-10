@@ -315,18 +315,12 @@ function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('sho
 /* ============ PWA VA DINAMIK IKONKA YARATISH ============ */
 (function setupPWAAndIcons(){
   try {
-    // 1. Dinamik ravishda 512x512 o'lchamdagi ikonka yaratamiz
     const canvas = document.createElement('canvas');
     canvas.width = 512; canvas.height = 512;
     const ctx = canvas.getContext('2d');
-
-    // Yashil gradient fon
     const grad = ctx.createLinearGradient(0, 0, 512, 512);
-    grad.addColorStop(0, '#2eaa64');
-    grad.addColorStop(1, '#0c6639');
+    grad.addColorStop(0, '#2eaa64'); grad.addColorStop(1, '#0c6639');
     ctx.fillStyle = grad;
-    
-    // Yumaloq burchakli kvadrat chizish
     const r = 100; 
     ctx.beginPath();
     ctx.moveTo(r, 0); ctx.lineTo(512 - r, 0); ctx.quadraticCurveTo(512, 0, 512, r);
@@ -334,17 +328,11 @@ function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('sho
     ctx.lineTo(r, 512); ctx.quadraticCurveTo(0, 512, 0, 512 - r);
     ctx.lineTo(0, r); ctx.quadraticCurveTo(0, 0, r, 0);
     ctx.fill();
-
-    // Oq rangda "E" harfini yozish
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 300px Inter, sans-serif';
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
     ctx.fillText('E', 256, 276);
-
-    // 2. Uni rasmga (Base64) aylantiramiz
     const iconDataUrl = canvas.toDataURL('image/png');
-
-    // 3. Manifest faylini yaratamiz va shu rasmni ichiga joylaymiz
     const manifest = {
       name: "Essential Words", short_name: "Essential",
       start_url: "./", scope: "./", display: "standalone",
@@ -354,21 +342,14 @@ function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('sho
         { src: iconDataUrl, sizes: "512x512", type: "image/png", purpose: "any maskable" }
       ]
     };
-    
     const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
     const link = document.createElement('link');
     link.rel = 'manifest'; link.href = URL.createObjectURL(blob);
     document.head.appendChild(link);
-    
-    // 4. Apple (iPhone) qurilmalari uchun ham shu ikonkani ulaymiz
     const aLink = document.createElement('link');
     aLink.rel = 'apple-touch-icon'; aLink.href = iconDataUrl;
     document.head.appendChild(aLink);
-
-  } catch(e) { 
-    console.warn('Manifest xatosi', e); 
-  }
-
+  } catch(e) { console.warn('Manifest xatosi', e); }
   if('serviceWorker' in navigator && location.protocol !== 'file:'){
     window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
   }
@@ -433,6 +414,7 @@ function unitCard(u){
     <div class="unit-actions">
       <button class="btn soft" onclick="openUnit('${esc(u)}')">Mashq</button>
       <button class="btn outline" onclick="document.getElementById('${uid}').click()">📥 Excel</button>
+      <button class="btn danger" onclick="deleteUnit('${esc(u).replace(/'/g,"\\'")}')">🗑️</button>
     </div>
     <input type="file" id="${uid}" accept=".xlsx,.xls,.csv" style="display:none" onchange="uploadToUnit(event,'${esc(u).replace(/'/g,"\\'")}')">
   </div>`;
@@ -499,6 +481,23 @@ async function markLearned(w){
   refresh();
 }
 
+/* ============ UNITNI O'CHIRISH ============ */
+async function deleteUnit(unitName){
+  const list = words.filter(w => w.unit === unitName);
+  if(!list.length) { toast("Unit bo'sh"); return; }
+  
+  if(!confirm(`«${unitName}» unitini va uning ichidagi ${list.length} ta so'zni butunlay o'chirishni xohlaysizmi?`)) return;
+
+  toast("O'chirilmoqda...");
+  const { error } = await sb.from('words').delete().eq('unit', unitName);
+  if(error){ toast('Xatolik: ' + error.message); return; }
+  
+  words = words.filter(w => w.unit !== unitName);
+  if(selectedUnit === unitName) selectedUnit = 'all';
+  refresh();
+  toast(`«${unitName}» uniti o'chirildi`);
+}
+
 /* ============ EXCEL YUKLASH VA DUBLIKATLARNI TOZALASH ============ */
 async function uploadToUnit(event, unitName){
   const input = event.target;
@@ -515,7 +514,6 @@ async function uploadToUnit(event, unitName){
     const parsed = detectColumns(rows);
     if(!parsed.length) throw new Error("Fayldan so'zlar topilmadi. Iltimos, ustunlarni tekshiring.");
 
-    // 1. Dublikatlarni tozalash (Bazadagi + Fayl ichidagi)
     const existingInDb = new Set(words.filter(w => w.unit.toLowerCase() === unitName.toLowerCase()).map(w => w.en.toLowerCase().trim()));
     const seenInFile = new Set();
     const toInsert = [];
@@ -523,7 +521,7 @@ async function uploadToUnit(event, unitName){
     for(const p of parsed){
       const key = p.en.toLowerCase().trim();
       if(!key) continue;
-      if(existingInDb.has(key) || seenInFile.has(key)) continue; // Dublikatni o'tkazib yuborish
+      if(existingInDb.has(key) || seenInFile.has(key)) continue;
       
       seenInFile.add(key);
       toInsert.push({ unit: unitName, en: p.en, uz: p.uz });
@@ -605,9 +603,8 @@ function scheduleNudge(){
   setInterval(() => {
     if(words.length < 3) return;
     if($('smartNudge').classList.contains('show')) return;
-    if(Math.random() > 0.3) return; // 30% ehtimol bilan chiqadi
+    if(Math.random() > 0.3) return;
 
-    // O'rganilmagan so'zlar orasidan tasodifiy tanlash
     const unlearned = words.filter(w => !w.learned);
     if(!unlearned.length) return;
     
@@ -615,7 +612,7 @@ function scheduleNudge(){
     $('nudgeWord').textContent = currentNudgeWord.en;
     $('nudgeUz').textContent = currentNudgeWord.uz;
     $('smartNudge').classList.add('show');
-  }, 45000); // Har 45 soniyada tekshiradi
+  }, 45000); 
 }
 
 async function nudgeAction(isKnown){
@@ -808,7 +805,7 @@ $('excelFile').addEventListener('change', async e => {
 
 (async function init(){
   await loadWords();
-  scheduleNudge(); // Aqlli eslatmalarni yoqish
+  scheduleNudge();
 })();
 </script>
 </body>
