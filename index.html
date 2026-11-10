@@ -9,30 +9,168 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Essential Words">
 <title>Essential Words — English Trainer</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
 <style>
-/* ... (barcha eski CSS o'zgarishsiz qoladi) ... */
 :root{--green:#16834a;--deep:#0b5932;--mint:#eaf8ef;--lime:#b9e7c7;--ink:#183329;--muted:#71847a;--line:#e1eee5;--white:#fff;--shadow:0 14px 40px #16452a12}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}body{margin:0;background:#f5faf6;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:env(safe-area-inset-bottom)}button,input,select{font:inherit}button{cursor:pointer;border:0}.app{display:flex;min-height:100vh}.sidebar{width:250px;background:#fff;border-right:1px solid var(--line);padding:26px 18px;display:flex;flex-direction:column;gap:25px;position:fixed;inset:0 auto 0 0;z-index:5}.brand{display:flex;align-items:center;gap:12px;padding:0 8px}.brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#2eaa64,#0c6639);display:grid;place-items:center;color:white;box-shadow:0 8px 18px #16834a33}.brand strong{font-size:16px;display:block}.brand small{color:var(--muted);font-size:11px}.nav{display:grid;gap:7px}.nav button{background:transparent;color:#60746a;text-align:left;padding:12px 13px;border-radius:12px;display:flex;gap:12px;align-items:center;font-weight:600}.nav button.active,.nav button:hover{background:var(--mint);color:var(--deep)}.nav svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}.side-note{margin-top:auto;background:linear-gradient(145deg,#e9f8ee,#f6fcf7);padding:16px;border-radius:16px;font-size:12px;color:#527060;line-height:1.6}.main{margin-left:250px;width:calc(100% - 250px);padding:30px 36px 60px;max-width:1500px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;gap:10px}.eyebrow{font-size:12px;color:var(--green);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.topbar h1{font-size:27px;margin:5px 0 0;letter-spacing:-.8px}.profile{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 13px;border:1px solid var(--line);border-radius:30px;color:#52675c;font-size:13px}.avatar{width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--green)}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{background:linear-gradient(115deg,#0d6738,#209653 65%,#55b878);border-radius:24px;padding:30px 34px;color:white;position:relative;overflow:hidden;box-shadow:0 18px 40px #167c4530}.hero:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff26;border-radius:50%;right:8%;top:-130px;box-shadow:0 0 0 35px #ffffff0a,0 0 0 75px #ffffff08}.hero-content{position:relative;z-index:1;max-width:610px}.hero h2{font-size:27px;margin:9px 0}.hero p{color:#d8f2e1;line-height:1.6;margin:0 0 20px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:11px 17px;border-radius:11px;background:var(--green);color:white;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}.btn.white{background:white;color:var(--deep)}.btn.soft{background:var(--mint);color:var(--deep)}.btn.outline{background:white;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#fff0ed;color:#b94737}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 28px}.stat,.panel,.unit-card,.game-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.stat{padding:17px 18px;display:flex;align-items:center;gap:13px}.stat-icon{width:40px;height:40px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center}.stat-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}.stat strong{font-size:21px;display:block}.stat small{color:var(--muted);font-size:11px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0 14px}.section-head h3{margin:0;font-size:17px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.units{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.unit-card{padding:17px;transition:.2s;cursor:pointer;position:relative}.unit-card:hover{transform:translateY(-3px);border-color:#a8d9b8}.unit-top{display:flex;justify-content:space-between;align-items:center}.unit-number{font-size:11px;font-weight:800;color:var(--green);background:var(--mint);padding:6px 9px;border-radius:8px}.unit-card h4{margin:13px 0 5px}.unit-card p{font-size:12px;color:var(--muted);margin:0 0 13px}.progress{height:6px;background:#edf4ef;border-radius:8px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#39ae68,#8bd39e);border-radius:8px}.unit-foot{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:9px}.unit-actions{display:flex;gap:6px;margin-top:10px}.unit-actions button{flex:1;font-size:11px;padding:7px 4px;border-radius:8px}.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel{padding:20px}.panel h3{margin:0 0 14px;font-size:16px}.quick-list{display:grid;gap:10px}.quick-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;background:#f8fbf9}.quick-row .qicon{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:white;color:var(--green)}.quick-row strong{font-size:13px;display:block}.quick-row small{color:var(--muted);font-size:11px}.quick-row button{margin-left:auto}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}.field{background:#fff;border:1px solid #dce9df;border-radius:11px;padding:11px 13px;color:var(--ink);outline:none;min-width:0;font-size:16px}.field:focus{border-color:#65b982;box-shadow:0 0 0 3px #16834a12}.field.full{width:100%}.field-label{display:block;font-size:12px;font-weight:700;color:#60746a;margin:0 0 7px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-item{min-width:0}.form-item.wide{grid-column:1/-1}.word-list{display:grid;gap:8px}.word-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:white;border:1px solid var(--line);border-radius:12px}.word-row strong{font-size:14px}.word-row span{font-size:13px;color:var(--muted)}.icon-btn{width:33px;height:33px;border-radius:9px;background:#f3f8f4;color:#658071}.icon-btn:hover{background:#ffefed;color:#b94737}.empty{padding:35px;text-align:center;color:var(--muted);background:white;border:1px dashed #cbded0;border-radius:15px}.empty svg{width:32px;height:32px;color:#8ab99a}.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.game-card{padding:18px;cursor:pointer;transition:.2s}.game-card:hover{transform:translateY(-3px);border-color:#a8d9b8}.game-icon{width:43px;height:43px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:20px}.game-card h4{margin:13px 0 5px}.game-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.game-area{max-width:760px;margin:15px auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);text-align:center}.game-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.question{font-size:30px;font-weight:800;margin:30px 0 8px;letter-spacing:-.7px;word-break:break-word}.subquestion{color:var(--muted);font-size:13px}.answer-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.answer-options button{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650;color:var(--ink)}.answer-options button:hover{border-color:#80c597;background:var(--mint)}.answer-options button.correct{background:#e4f7e9;border-color:#62bd7c;color:#17683a}.answer-options button.wrong{background:#fff0ed;border-color:#eaa397;color:#a33e31}.feedback{min-height:25px;font-size:13px;font-weight:700}.flashcard{min-height:210px;border-radius:18px;background:linear-gradient(145deg,#f0faf3,#e2f5e8);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;margin:22px 0;cursor:pointer}.flashcard .bigword{font-size:36px;font-weight:850;color:var(--deep);word-break:break-word;text-align:center}.flashcard small{color:#648170;margin-top:10px}.game-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:17px}.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}.match-grid button{padding:16px 10px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650}.match-grid button.selected{background:#e5f6ea;border-color:#54b778}.match-grid button.matched{opacity:.35;pointer-events:none}.toast{position:fixed;right:25px;bottom:25px;left:25px;max-width:420px;margin:0 auto;background:#164f30;color:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.25s;z-index:20;pointer-events:none;text-align:center}.toast.show{opacity:1;transform:none}.muted{color:var(--muted)}.small{font-size:12px}.hidden{display:none!important}.file-help{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#f5faf6;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:env(safe-area-inset-bottom);overflow-x:hidden}
+button,input,select{font:inherit}button{cursor:pointer;border:0}
+.app{display:flex;min-height:100vh}
+
+/* ANIMATSIYALAR */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes popIn{0%{transform:scale(0.8);opacity:0}50%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+@keyframes slideInRight{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes pulseGlow{0%{box-shadow:0 0 0 0 rgba(22,131,74,0.4)}70%{box-shadow:0 0 0 15px rgba(22,131,74,0)}100%{box-shadow:0 0 0 0 rgba(22,131,74,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+.sidebar{width:250px;background:#fff;border-right:1px solid var(--line);padding:26px 18px;display:flex;flex-direction:column;gap:25px;position:fixed;inset:0 auto 0 0;z-index:5;transition:transform 0.3s ease}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px}
+.brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#2eaa64,#0c6639);display:grid;place-items:center;color:white;box-shadow:0 8px 18px #16834a33;animation:float 3s ease-in-out infinite}
+.brand strong{font-size:16px;display:block}.brand small{color:var(--muted);font-size:11px}
+.nav{display:grid;gap:7px}
+.nav button{background:transparent;color:#60746a;text-align:left;padding:12px 13px;border-radius:12px;display:flex;gap:12px;align-items:center;font-weight:600;transition:all 0.2s ease}
+.nav button.active,.nav button:hover{background:var(--mint);color:var(--deep);transform:translateX(4px)}
+.nav svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
+.side-note{margin-top:auto;background:linear-gradient(145deg,#e9f8ee,#f6fcf7);padding:16px;border-radius:16px;font-size:12px;color:#527060;line-height:1.6}
+.main{margin-left:250px;width:calc(100% - 250px);padding:30px 36px 60px;max-width:1500px;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px;gap:10px;animation:fadeUp 0.4s ease}
+.eyebrow{font-size:12px;color:var(--green);font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.topbar h1{font-size:27px;margin:5px 0 0;letter-spacing:-.8px}
+.profile{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 13px;border:1px solid var(--line);border-radius:30px;color:#52675c;font-size:13px;box-shadow:var(--shadow)}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--green)}
+
+.page{display:none;animation:fadeUp 0.45s cubic-bezier(0.16,1,0.3,1) forwards}
+.page.active{display:block}
+.hero{background:linear-gradient(115deg,#0d6738,#209653 65%,#55b878);border-radius:24px;padding:30px 34px;color:white;position:relative;overflow:hidden;box-shadow:0 18px 40px #167c4530}
+.hero:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff26;border-radius:50%;right:8%;top:-130px;box-shadow:0 0 0 35px #ffffff0a,0 0 0 75px #ffffff08;transition:all 1s ease}
+.hero:hover:after{transform:scale(1.1) rotate(10deg)}
+.hero-content{position:relative;z-index:1;max-width:610px}
+.hero h2{font-size:27px;margin:9px 0}.hero p{color:#d8f2e1;line-height:1.6;margin:0 0 20px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.btn{padding:11px 17px;border-radius:11px;background:var(--green);color:white;font-weight:700;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);display:inline-flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px) scale(1.02);filter:brightness(1.1);box-shadow:0 8px 20px #16834a33}
+.btn:active{transform:translateY(0) scale(0.98)}
+.btn.white{background:white;color:var(--deep)}.btn.soft{background:var(--mint);color:var(--deep)}.btn.outline{background:white;border:1px solid var(--line);color:var(--ink)}.btn.danger{background:#fff0ed;color:#b94737}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0 28px}
+.stat,.panel,.unit-card,.game-card{background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow);transition:all 0.3s ease}
+.stat{padding:17px 18px;display:flex;align-items:center;gap:13px;animation:popIn 0.5s backwards}
+.stat:nth-child(1){animation-delay:0.1s}.stat:nth-child(2){animation-delay:0.2s}.stat:nth-child(3){animation-delay:0.3s}.stat:nth-child(4){animation-delay:0.4s}
+.stat:hover{transform:translateY(-3px);border-color:#a8d9b8}
+.stat-icon{width:40px;height:40px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center}
+.stat-icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.stat strong{font-size:21px;display:block}.stat small{color:var(--muted);font-size:11px}
+
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0 14px}
+.section-head h3{margin:0;font-size:17px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}
+
+.units{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.unit-card{padding:17px;cursor:pointer;position:relative;animation:fadeUp 0.5s backwards}
+.unit-card:hover{transform:translateY(-5px);border-color:#80c597;box-shadow:0 20px 40px #16452a20}
+.unit-top{display:flex;justify-content:space-between;align-items:center}
+.unit-number{font-size:11px;font-weight:800;color:var(--green);background:var(--mint);padding:6px 9px;border-radius:8px}
+.unit-card h4{margin:13px 0 5px}.unit-card p{font-size:12px;color:var(--muted);margin:0 0 13px}
+.progress{height:6px;background:#edf4ef;border-radius:8px;overflow:hidden}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#39ae68,#8bd39e);border-radius:8px;transition:width 1s cubic-bezier(0.4,0,0.2,1)}
+.unit-foot{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:9px}
+.unit-actions{display:flex;gap:6px;margin-top:12px}
+.unit-actions button{flex:1;font-size:11px;padding:8px 4px;border-radius:8px}
+
+.two-col{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+.panel{padding:20px}.panel h3{margin:0 0 14px;font-size:16px}
+.quick-list{display:grid;gap:10px}
+.quick-row{display:flex;align-items:center;gap:12px;padding:10px;border-radius:12px;background:#f8fbf9;transition:background 0.2s}
+.quick-row:hover{background:var(--mint)}
+.quick-row .qicon{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:white;color:var(--green);box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.quick-row strong{font-size:13px;display:block}.quick-row small{color:var(--muted);font-size:11px}.quick-row button{margin-left:auto}
+
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}
+.field{background:#fff;border:1px solid #dce9df;border-radius:11px;padding:11px 13px;color:var(--ink);outline:none;min-width:0;font-size:16px;transition:border-color 0.2s, box-shadow 0.2s}
+.field:focus{border-color:#65b982;box-shadow:0 0 0 3px #16834a12}
+.field.full{width:100%}.field-label{display:block;font-size:12px;font-weight:700;color:#60746a;margin:0 0 7px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-item{min-width:0}.form-item.wide{grid-column:1/-1}
+
+.word-list{display:grid;gap:8px}
+.word-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:center;padding:12px 14px;background:white;border:1px solid var(--line);border-radius:12px;transition:transform 0.2s, box-shadow 0.2s}
+.word-row:hover{transform:scale(1.01);box-shadow:0 5px 15px #16452a10;border-color:#b9e7c7}
+.word-row strong{font-size:14px}.word-row span{font-size:13px;color:var(--muted)}
+.icon-btn{width:33px;height:33px;border-radius:9px;background:#f3f8f4;color:#658071;display:grid;place-items:center;transition:all 0.2s}
+.icon-btn:hover{background:#ffefed;color:#b94737;transform:rotate(90deg)}
+.empty{padding:35px;text-align:center;color:var(--muted);background:white;border:1px dashed #cbded0;border-radius:15px}
+
+.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.game-card{padding:18px;cursor:pointer;animation:fadeUp 0.5s backwards}
+.game-card:hover{transform:translateY(-5px);border-color:#80c597;box-shadow:0 15px 30px #16452a15}
+.game-icon{width:43px;height:43px;border-radius:13px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-size:20px;transition:transform 0.3s}
+.game-card:hover .game-icon{transform:scale(1.1) rotate(5deg)}
+.game-card h4{margin:13px 0 5px}.game-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+
+.game-area{max-width:760px;margin:15px auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow);text-align:center;animation:popIn 0.4s ease}
+.game-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.question{font-size:30px;font-weight:800;margin:30px 0 8px;letter-spacing:-.7px;word-break:break-word;animation:fadeUp 0.3s ease}
+.subquestion{color:var(--muted);font-size:13px}
+.answer-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}
+.answer-options button{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650;color:var(--ink);transition:all 0.2s}
+.answer-options button:hover:not(:disabled){border-color:#80c597;background:var(--mint);transform:translateY(-2px)}
+.answer-options button.correct{background:#e4f7e9;border-color:#62bd7c;color:#17683a;animation:pulseGlow 1s}
+.answer-options button.wrong{background:#fff0ed;border-color:#eaa397;color:#a33e31;animation:shake 0.4s}
+.feedback{min-height:25px;font-size:13px;font-weight:700;transition:all 0.3s}
+
+.flashcard{min-height:210px;border-radius:18px;background:linear-gradient(145deg,#f0faf3,#e2f5e8);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px;margin:22px 0;cursor:pointer;transition:transform 0.3s;box-shadow:inset 0 0 0 1px #ffffff}
+.flashcard:active{transform:scale(0.98)}
+.flashcard .bigword{font-size:36px;font-weight:850;color:var(--deep);word-break:break-word;text-align:center;animation:popIn 0.4s ease}
+.flashcard small{color:#648170;margin-top:10px}
+
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0}
+.match-grid button{padding:16px 10px;border:1px solid var(--line);border-radius:12px;background:#fbfdfb;font-weight:650;transition:all 0.2s}
+.match-grid button:hover:not(.matched){transform:scale(1.02);border-color:#b9e7c7}
+.match-grid button.selected{background:#e5f6ea;border-color:#54b778;transform:scale(0.95)}
+.match-grid button.matched{opacity:.35;pointer-events:none;transform:scale(0.9)}
+
+.toast{position:fixed;right:25px;bottom:25px;left:25px;max-width:420px;margin:0 auto;background:#164f30;color:white;padding:13px 18px;border-radius:12px;box-shadow:var(--shadow);opacity:0;transform:translateY(20px);transition:.3s cubic-bezier(0.4,0,0.2,1);z-index:100;pointer-events:none;text-align:center;font-weight:600}
+.toast.show{opacity:1;transform:none}
+
+/* AQLLI ESLATMA (BILDIRISHNOMA) */
+.smart-nudge{position:fixed;bottom:30px;right:30px;background:white;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 20px 50px rgba(0,0,0,0.15);display:flex;flex-direction:column;gap:12px;z-index:99;transform:translateX(120%);transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);max-width:320px}
+.smart-nudge.show{transform:translateX(0)}
+.nudge-header{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);font-weight:700}
+.nudge-word{font-size:22px;font-weight:800;color:var(--deep);text-align:center;margin:5px 0}
+.nudge-actions{display:flex;gap:8px;margin-top:5px}
+.nudge-actions button{flex:1;padding:8px;border-radius:8px;font-size:12px;font-weight:700}
+.nudge-close{position:absolute;top:10px;right:10px;background:none;border:none;color:#a0b0a8;font-size:18px;cursor:pointer}
+
+@media(max-width:860px){
+  .sidebar{display:none}.main{margin-left:0;width:100%;padding:16px 14px 100px}
+  .mobile-nav{display:block}.topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}
+  .profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}
+  .hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}
+  .stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}
+  .units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}
+  .word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}
+  .form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}
+  .question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}
+  .flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}
+  .section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}
+  .toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}
+  .install-banner{flex-wrap:wrap}.install-banner .ib-actions{margin-left:0;width:100%}.install-banner .ib-actions button{flex:1}
+  .smart-nudge{bottom:80px;left:14px;right:14px;max-width:none}
+}
 .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:10}
 .mobile-nav-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;max-width:600px;margin:0 auto}
 .mobile-nav button{background:transparent;color:#71847a;padding:8px 4px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:600}
 .mobile-nav button.active{color:var(--green);background:var(--mint)}
 .mobile-nav svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
-/* PWA install banner */
-.install-banner{display:none;align-items:center;gap:12px;background:linear-gradient(115deg,#0d6738,#209653);color:#fff;border-radius:16px;padding:14px 18px;margin-bottom:18px;box-shadow:0 10px 30px #16834a30}
+
+.install-banner{display:none;align-items:center;gap:12px;background:linear-gradient(115deg,#0d6738,#209653);color:#fff;border-radius:16px;padding:14px 18px;margin-bottom:18px;box-shadow:0 10px 30px #16834a30;animation:slideInRight 0.5s ease}
 .install-banner.show{display:flex}
 .install-banner .ib-icon{width:42px;height:42px;border-radius:12px;background:#ffffff24;display:grid;place-items:center;font-size:20px;flex-shrink:0}
-.install-banner strong{display:block;font-size:14px}
-.install-banner small{color:#d8f2e1;font-size:12px}
+.install-banner strong{display:block;font-size:14px}.install-banner small{color:#d8f2e1;font-size:12px}
 .install-banner .ib-actions{margin-left:auto;display:flex;gap:8px;flex-shrink:0}
 .install-banner .ib-actions button{padding:8px 13px;border-radius:9px;font-size:12px;font-weight:700}
 .install-banner .ib-close{background:#ffffff20;color:#fff}
 .install-banner .ib-go{background:#fff;color:var(--deep)}
-@media(max-width:860px){.sidebar{display:none}.main{margin-left:0;width:100%;padding:16px 14px 100px}.mobile-nav{display:block}.topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}.profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}.hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}.stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}.units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}.form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}.question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}.flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}.section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}.toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}.install-banner{flex-wrap:wrap}.install-banner .ib-actions{margin-left:0;width:100%}.install-banner .ib-actions button{flex:1}}
-@media(max-width:400px){.stats{grid-template-columns:1fr 1fr}.stat strong{font-size:15px}.hero h2{font-size:19px}}
 </style>
 </head>
 <body>
@@ -45,7 +183,7 @@
   <button data-page="units"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21Z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20"/></svg><span>Unitlar</span></button>
   <button data-page="words"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>So'zlarim</span></button>
   <button data-page="games"><svg viewBox="0 0 24 24"><path d="M6 12h4m-2-2v4m7-1h.01M18 11h.01"/><path d="M6 7h12a3 3 0 0 1 2.9 3.8l-1.2 4.5a2 2 0 0 1-3.2 1l-2.2-1.7h-4.6l-2.2 1.7a2 2 0 0 1-3.2-1l-1.2-4.5A3 3 0 0 1 6 7Z"/></svg><span>O'yinlar</span></button>
-  <button data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>So'z qo'shish</span></button>
+  <button data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Qo'shish</span></button>
  </nav>
  <div class="side-note"><strong>Har kuni oz-ozdan!</strong><br>So'zlarni takrorlang, talaffuz qiling va bilimni mustahkamlang.</div>
 </aside>
@@ -54,13 +192,13 @@
  <header class="topbar"><div><div class="eyebrow">YOUR DAILY ENGLISH HABIT</div><h1 id="pageTitle">O'rganishni boshlaymiz!</h1></div><div class="profile"><span class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span><span>Mening lug'atim</span></div></header>
 
  <section class="page active" id="home">
-  <!-- PWA install banner -->
   <div id="installBanner" class="install-banner">
     <div class="ib-icon">📲</div>
-    <div><strong>Ilovani telefonga o'rnating</strong><small>Tezroq ochiladi, internet bo'lmasa ham ishlaydi</small></div>
+    <div><strong>Ilovani telefonga o'rnating</strong><small>Tezroq ochiladi, internetsiz ham ishlaydi</small></div>
     <div class="ib-actions"><button class="ib-close" onclick="hideInstallBanner()">Keyin</button><button class="ib-go" onclick="installApp()">O'rnatish</button></div>
   </div>
-  <div class="hero"><div class="hero-content"><div class="eyebrow" style="color:#c9f0d5">BUGUNGI MAQSAD — 10 TA SO'Z</div><h2>Ingliz tilini o'yin orqali o'rganing</h2><p>Essential kitobingizdagi unitlarni qo'shing, so'zlarni ovoz chiqarib ayting va qiziqarli mashqlar bilan eslab qoling.</p><div class="hero-actions"><button class="btn white" onclick="showPage('add')">＋ So'z qo'shish</button><button class="btn" style="background:#ffffff24;color:white;border:1px solid #ffffff55" onclick="showPage('games')">O'yinlarni boshlash →</button><button class="btn" style="background:#ffffff24;color:white;border:1px solid #ffffff55" onclick="installApp()">📲 Ilovani o'rnatish</button></div></div></div>
+  <div class="hero"><div class="hero-content"><div class="eyebrow" style="color:#c9f0d5">BUGUNGI MAQSAD — 10 TA SO'Z</div><h2>Ingliz tilini o'yin orqali o'rganing</h2><p>Essential kitobingizdagi unitlarni qo'shing, so'zlarni ovoz chiqarib ayting va qiziqarli mashqlar bilan eslab qoling.</p><div class="hero-actions"><button class="btn white" onclick="showPage('add')">＋ So'z qo'shish</button><button class="btn" style="background:#ffffff24;color:white;border:1px solid #ffffff55" onclick="showPage('games')">O'yinlarni boshlash →</button></div></div></div>
+  
   <div class="stats">
    <div class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg></div><div><strong id="statWords">0</strong><small>Jami so'zlar</small></div></div>
    <div class="stat"><div class="stat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><strong id="statUnits">0</strong><small>Unitlar</small></div></div>
@@ -69,6 +207,7 @@
   </div>
   <div class="section-head"><div><h3>Unitlaringiz</h3><p>Kerakli unitni tanlab, mashqni boshlang</p></div><button class="btn soft" onclick="showPage('units')">Barchasi →</button></div>
   <div class="units" id="homeUnits"></div>
+  
   <div class="section-head"><div><h3>Tezkor mashqlar</h3><p>Bir necha daqiqada bilimni sinab ko'ring</p></div></div>
   <div class="two-col"><div class="panel"><h3>Davom etish uchun</h3><div class="quick-list">
    <div class="quick-row"><div class="qicon">▤</div><div><strong>Flashcard</strong><small>So'z va tarjimani yodlang</small></div><button class="btn soft" onclick="startGame('flash')">Boshlash</button></div>
@@ -77,23 +216,54 @@
   </div></div><div class="panel"><h3>O'qish bo'yicha maslahat</h3><p class="muted small" style="line-height:1.8">1. Har bir unitga alohida so'zlar kiriting.<br>2. Inglizcha so'zni ko'rib, tarjimasini ayting.<br>3. Ertasi kuni yana takrorlang.<br>4. Qiyin so'zlarni alohida qayta mashq qiling.</p><button class="btn soft" onclick="showPage('add')">Yangi unit yaratish</button></div></div>
  </section>
 
- <section class="page" id="units"><div class="section-head"><div><h3>Essential unitlar</h3><p>Unitni tanlang yoki unga Excel/CSV fayl yuklang</p></div><button class="btn" onclick="showPage('add')">＋ Yangi unit</button></div><div class="units" id="allUnits"></div></section>
+ <section class="page" id="units">
+  <div class="section-head"><div><h3>Essential unitlar</h3><p>Unitni tanlang yoki unga to'g'ridan-to'g'ri Excel/CSV fayl yuklang</p></div><button class="btn" onclick="showPage('add')">＋ Yangi unit</button></div>
+  <div class="units" id="allUnits"></div>
+ </section>
 
- <section class="page" id="words"><div class="section-head"><div><h3>Mening so'zlarim</h3><p>Barcha kiritilgan so'zlarni boshqaring</p></div><button class="btn" onclick="showPage('add')">＋ So'z qo'shish</button></div><div class="toolbar"><input id="wordSearch" class="field" placeholder="Qidirish..." oninput="renderWords()"><select id="wordUnitFilter" class="field" onchange="renderWords()"><option value="all">Barcha unitlar</option></select></div><div id="wordList" class="word-list"></div></section>
+ <section class="page" id="words">
+  <div class="section-head"><div><h3>Mening so'zlarim</h3><p>Barcha kiritilgan so'zlarni boshqaring</p></div><button class="btn" onclick="showPage('add')">＋ So'z qo'shish</button></div>
+  <div class="toolbar"><input id="wordSearch" class="field" placeholder="Qidirish..." oninput="renderWords()"><select id="wordUnitFilter" class="field" onchange="renderWords()"><option value="all">Barcha unitlar</option></select></div>
+  <div id="wordList" class="word-list"></div>
+ </section>
 
- <section class="page" id="games"><div class="section-head"><div><h3>O'yinlar va mashqlar</h3><p>Unit tanlang va o'zingizga mos mashqni boshlang</p></div></div><div class="toolbar"><select id="gameUnit" class="field" onchange="selectedUnit=this.value"><option value="all">Barcha unitlar</option></select><span class="small muted">Tanlangan unit bo'yicha so'zlar olinadi</span></div><div class="game-grid">
-  <div class="game-card" onclick="startGame('flash')"><div class="game-icon">▤</div><h4>Flashcard</h4><p>Kartani aylantirib, inglizcha so'z va tarjimani eslab qoling.</p></div>
-  <div class="game-card" onclick="startGame('quiz')"><div class="game-icon">✓</div><h4>Tarjima testi</h4><p>Inglizcha so'zga mos o'zbekcha tarjimani toping.</p></div>
-  <div class="game-card" onclick="startGame('reverse')"><div class="game-icon">⇄</div><h4>Teskari tarjima</h4><p>O'zbekcha tarjimadan inglizcha so'zni toping.</p></div>
-  <div class="game-card" onclick="startGame('type')"><div class="game-icon">⌨</div><h4>Yozib topish</h4><p>Tarjimani ko'rib, inglizcha so'zni klaviaturada yozing.</p></div>
-  <div class="game-card" onclick="startGame('listen')"><div class="game-icon">♫</div><h4>Eshitib topish</h4><p>So'zni tinglang va uning tarjimasini belgilang.</p></div>
-  <div class="game-card" onclick="startGame('speak')"><div class="game-icon">◉</div><h4>Ovozli javob</h4><p>Tarjimani mikrofonga ayting — dastur javobingizni tekshiradi.</p></div>
-  <div class="game-card" onclick="startGame('match')"><div class="game-icon">⌘</div><h4>Juftini top</h4><p>Inglizcha so'zlarni mos tarjimalari bilan juftlang.</p></div>
- </div><div id="gameArea"></div></section>
+ <section class="page" id="games">
+  <div class="section-head"><div><h3>O'yinlar va mashqlar</h3><p>Unit tanlang va o'zingizga mos mashqni boshlang</p></div></div>
+  <div class="toolbar"><select id="gameUnit" class="field" onchange="selectedUnit=this.value"><option value="all">Barcha unitlar</option></select><span class="small muted">Tanlangan unit bo'yicha so'zlar olinadi</span></div>
+  <div class="game-grid">
+    <div class="game-card" onclick="startGame('flash')"><div class="game-icon">▤</div><h4>Flashcard</h4><p>Kartani aylantirib, inglizcha so'z va tarjimani eslab qoling.</p></div>
+    <div class="game-card" onclick="startGame('quiz')"><div class="game-icon">✓</div><h4>Tarjima testi</h4><p>Inglizcha so'zga mos o'zbekcha tarjimani toping.</p></div>
+    <div class="game-card" onclick="startGame('reverse')"><div class="game-icon">⇄</div><h4>Teskari tarjima</h4><p>O'zbekcha tarjimadan inglizcha so'zni toping.</p></div>
+    <div class="game-card" onclick="startGame('type')"><div class="game-icon">⌨</div><h4>Yozib topish</h4><p>Tarjimani ko'rib, inglizcha so'zni klaviaturada yozing.</p></div>
+    <div class="game-card" onclick="startGame('listen')"><div class="game-icon">♫</div><h4>Eshitib topish</h4><p>So'zni tinglang va uning tarjimasini belgilang.</p></div>
+    <div class="game-card" onclick="startGame('match')"><div class="game-icon">⌘</div><h4>Juftini top</h4><p>Inglizcha so'zlarni mos tarjimalari bilan juftlang.</p></div>
+  </div>
+  <div id="gameArea"></div>
+ </section>
 
- <section class="page" id="add"><div class="section-head"><div><h3>So'zlar va unit qo'shish</h3><p>Essential kitobingizdagi unitlarni shu yerga kiriting</p></div></div><div class="two-col"><div class="panel"><h3>Qo'lda so'z qo'shish</h3><div class="form-grid"><div class="form-item wide"><label class="field-label">Unit nomi yoki raqami</label><input id="unitName" class="field full" placeholder="Masalan: Unit 1"></div><div class="form-item"><label class="field-label">Inglizcha so'z</label><input id="englishWord" class="field full" placeholder="apple"></div><div class="form-item"><label class="field-label">O'zbekcha tarjimasi</label><input id="uzbekWord" class="field full" placeholder="olma"></div><div class="form-item wide"><button class="btn" style="width:100%" onclick="addWord()">＋ So'zni saqlash</button></div></div><p class="file-help">Har bir so'zni alohida kiriting. Bir xil unit nomini yozsangiz, so'zlar o'sha unitga qo'shiladi.</p></div>
- <div class="panel"><h3>Excel yoki CSV dan yuklash</h3><div style="border:1px dashed #b9d9c2;background:#f7fcf8;border-radius:14px;padding:23px;text-align:center"><div style="font-size:30px;color:var(--green)">⇧</div><strong>Faylni tanlang</strong><p class="small muted">.xlsx, .xls yoki .csv format</p><input id="excelFile" type="file" accept=".xlsx,.xls,.csv" class="field full" style="margin-top:8px"></div><div class="file-help"><b>Excel ustunlari:</b> Unit | English | Uzbek<br>Masalan: Unit 1 | apple | olma</div><button class="btn soft" style="width:100%;margin-top:12px" onclick="downloadTemplate()">Namunaviy CSV yuklab olish</button></div></div>
- <div class="panel" style="margin-top:16px"><h3>Ma'lumotlarni boshqarish</h3><p class="small muted">So'zlaringiz bulutda saqlanadi va sinxronlanadi.</p><div class="toolbar"><button class="btn outline" onclick="exportCSV()">So'zlarni CSV qilib saqlash</button><button class="btn danger" onclick="clearAll()">Barcha ma'lumotlarni o'chirish</button></div></div></section>
+ <section class="page" id="add">
+  <div class="section-head"><div><h3>So'zlar va unit qo'shish</h3><p>Essential kitobingizdagi unitlarni shu yerga kiriting</p></div></div>
+  <div class="two-col">
+    <div class="panel"><h3>Qo'lda so'z qo'shish</h3>
+      <div class="form-grid">
+        <div class="form-item wide"><label class="field-label">Unit nomi yoki raqami</label><input id="unitName" class="field full" placeholder="Masalan: Unit 1"></div>
+        <div class="form-item"><label class="field-label">Inglizcha so'z</label><input id="englishWord" class="field full" placeholder="apple"></div>
+        <div class="form-item"><label class="field-label">O'zbekcha tarjimasi</label><input id="uzbekWord" class="field full" placeholder="olma"></div>
+        <div class="form-item wide"><button class="btn" style="width:100%" onclick="addWord()">＋ So'zni saqlash</button></div>
+      </div>
+      <p class="small muted" style="margin-top:10px;line-height:1.6">Har bir so'zni alohida kiriting. Bir xil unit nomini yozsangiz, so'zlar o'sha unitga qo'shiladi.</p>
+    </div>
+    <div class="panel"><h3>Excel yoki CSV dan yuklash</h3>
+      <div style="border:1px dashed #b9d9c2;background:#f7fcf8;border-radius:14px;padding:23px;text-align:center">
+        <div style="font-size:30px;color:var(--green)">⇧</div><strong>Faylni tanlang</strong><p class="small muted">.xlsx, .xls yoki .csv format</p>
+        <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" class="field full" style="margin-top:8px">
+      </div>
+      <div class="small muted" style="margin-top:10px;line-height:1.6"><b>Excel ustunlari:</b> Unit | English | Uzbek<br>Dublikat so'zlar avtomatik tozalanadi.</div>
+      <button class="btn soft" style="width:100%;margin-top:12px" onclick="downloadTemplate()">Namunaviy CSV yuklab olish</button>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>Ma'lumotlarni boshqarish</h3><p class="small muted">So'zlaringiz bulutda saqlanadi va sinxronlanadi.</p><div class="toolbar"><button class="btn outline" onclick="exportCSV()">So'zlarni CSV qilib saqlash</button><button class="btn danger" onclick="clearAll()">Barcha ma'lumotlarni o'chirish</button></div></div>
+ </section>
 </main>
 
 <nav class="mobile-nav">
@@ -109,6 +279,21 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- Aqlli eslatma oynasi -->
+<div class="smart-nudge" id="smartNudge">
+  <button class="nudge-close" onclick="document.getElementById('smartNudge').classList.remove('show')">×</button>
+  <div class="nudge-header"><span>💡</span> Eslatma</div>
+  <div style="text-align:center">
+    <div class="small muted">Bu so'zni bilasizmi?</div>
+    <div class="nudge-word" id="nudgeWord">-</div>
+    <div class="small" style="font-weight:bold;color:var(--green)" id="nudgeUz">-</div>
+  </div>
+  <div class="nudge-actions">
+    <button class="btn soft" onclick="nudgeAction(false)">Bilmadim</button>
+    <button class="btn" onclick="nudgeAction(true)">Bilaman</button>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL = 'https://txkjaraohikuyoytiqdb.supabase.co';
@@ -120,76 +305,95 @@ const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let words = [];
 let correctCount = 0, answerCount = 0;
 let selectedUnit = 'all', deck = [], idx = 0, flipped = false, score = 0, matchSelected = null, matched = 0, recognition = null;
+let currentNudgeWord = null;
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2400); }
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3000); }
 
-/* ============ PWA INSTALL ============ */
+/* ============ PWA VA DINAMIK IKONKA YARATISH ============ */
+(function setupPWAAndIcons(){
+  function generateIcon(size){
+    const canvas = document.createElement('canvas');
+    canvas.width = size; canvas.height = size;
+    const ctx = canvas.getContext('2d');
+    const grad = ctx.createLinearGradient(0, 0, size, size);
+    grad.addColorStop(0, '#2eaa64'); grad.addColorStop(1, '#0c6639');
+    ctx.fillStyle = grad;
+    const r = size * 0.22;
+    ctx.beginPath();
+    ctx.moveTo(r, 0); ctx.lineTo(size - r, 0); ctx.quadraticCurveTo(size, 0, size, r);
+    ctx.lineTo(size, size - r); ctx.quadraticCurveTo(size, size, size - r, size);
+    ctx.lineTo(r, size); ctx.quadraticCurveTo(0, size, 0, size - r);
+    ctx.lineTo(0, r); ctx.quadraticCurveTo(0, 0, r, 0);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = `bold ${size * 0.5}px Inter, sans-serif`;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('E', size / 2, size / 2 + size * 0.05);
+    return canvas.toDataURL('image/png');
+  }
+
+  const icon192 = generateIcon(192);
+  const icon512 = generateIcon(512);
+
+  try {
+    const manifest = {
+      name: "Essential Words", short_name: "Essential",
+      start_url: "./", scope: "./", display: "standalone",
+      background_color: "#f5faf6", theme_color: "#16834a",
+      icons: [
+        { src: icon192, sizes: "192x192", type: "image/png", purpose: "any maskable" },
+        { src: icon512, sizes: "512x512", type: "image/png", purpose: "any maskable" }
+      ]
+    };
+    const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+    const link = document.createElement('link');
+    link.rel = 'manifest'; link.href = URL.createObjectURL(blob);
+    document.head.appendChild(link);
+    
+    // Apple Touch Icon
+    const aLink = document.createElement('link');
+    aLink.rel = 'apple-touch-icon'; aLink.href = icon192;
+    document.head.appendChild(aLink);
+  } catch(e) { console.warn('Manifest xatosi', e); }
+
+  if('serviceWorker' in navigator && location.protocol !== 'file:'){
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  }
+})();
 
 let deferredPrompt = null;
-const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  if(!localStorage.getItem('installBannerDismissed') && !isStandalone()){
+  e.preventDefault(); deferredPrompt = e;
+  if(!localStorage.getItem('installBannerDismissed') && !window.matchMedia('(display-mode: standalone)').matches){
     $('installBanner').classList.add('show');
   }
 });
-
 window.addEventListener('appinstalled', () => {
-  deferredPrompt = null;
-  $('installBanner').classList.remove('show');
+  deferredPrompt = null; $('installBanner').classList.remove('show');
   toast("Ilova telefoningizga o'rnatildi!");
 });
-
-function hideInstallBanner(){
-  $('installBanner').classList.remove('show');
-  localStorage.setItem('installBannerDismissed','1');
-}
-
+function hideInstallBanner(){ $('installBanner').classList.remove('show'); localStorage.setItem('installBannerDismissed','1'); }
 async function installApp(){
-  if(isStandalone()){ toast("Ilova allaqachon o'rnatilgan"); return; }
-
   if(deferredPrompt){
     deferredPrompt.prompt();
     const { outcome } = await deferredPrompt.userChoice;
-    if(outcome === 'accepted'){ toast("O'rnatilmoqda..."); }
-    deferredPrompt = null;
-    $('installBanner').classList.remove('show');
-    return;
+    if(outcome === 'accepted') toast("O'rnatilmoqda...");
+    deferredPrompt = null; $('installBanner').classList.remove('show');
+  } else {
+    alert("Brauzer menyusidan «Bosh ekranga qo'shish» ni tanlang.");
   }
-
-  if(isIOS()){
-    alert("iPhone/iPad uchun o'rnatish:\n\n1. Safari'da pastdagi «Ulashish» (Share) tugmasini bosing.\n2. «Bosh ekranga qo'shish» (Add to Home Screen) ni tanlang.\n3. «Qo'shish» tugmasini bosing.");
-    return;
-  }
-
-  // Chrome desktop, lekin beforeinstallprompt chiqmagan
-  if(location.protocol === 'file:'){
-    alert("Diqqat: Fayl to'g'ridan-to'g'ri (file://) ochilgani uchun o'rnatish ishlamaydi.\n\nSaytni HTTPS orqali joylashtiring (masalan, Netlify, Vercel, GitHub Pages).");
-    return;
-  }
-
-  alert("Brauzeringiz avtomatik o'rnatishni qo'llab-quvvatlamaydi.\n\nBrauzer menyusidan «Bosh ekranga qo'shish» / «Ilovani o'rnatish» ni tanlang.");
 }
 
-if(isIOS() && !isStandalone() && !localStorage.getItem('installBannerDismissed')){
-  setTimeout(() => $('installBanner').classList.add('show'), 1500);
-}
-
-/* ============ DATA ============ */
-
+/* ============ MA'LUMOTLAR ============ */
 async function loadWords(){
   const { data, error } = await sb.from('words').select('*').order('created_at',{ascending:true});
-  if(error){ toast("So'zlarni yuklab bo'lmadi: " + error.message); return; }
+  if(error){ toast("Yuklashda xato: " + error.message); return; }
   words = (data||[]).map(w => ({ id: w.id, unit: w.unit, en: w.en, uz: w.uz, learned: w.learned }));
   refresh();
 }
-
 function units(){ return [...new Set(words.map(w => w.unit))].sort((a,b) => a.localeCompare(b, undefined, {numeric:true})); }
 
 function showPage(p){
@@ -203,12 +407,7 @@ function showPage(p){
   if(p === 'games') renderGameOptions();
   window.scrollTo({ top:0, behavior:'smooth' });
 }
-
-document.querySelectorAll('.nav button, .mobile-nav button').forEach(b => {
-  b.addEventListener('click', () => showPage(b.dataset.page));
-});
-
-/* ============ UNIT CARD (Excel yuklash tugmasi bilan) ============ */
+document.querySelectorAll('.nav button, .mobile-nav button').forEach(b => b.addEventListener('click', () => showPage(b.dataset.page)));
 
 function unitCard(u){
   const list = words.filter(w => w.unit === u);
@@ -220,7 +419,7 @@ function unitCard(u){
     <h4>${esc(u)}</h4>
     <p>${done} ta so'z o'rganilgan</p>
     <div class="progress"><span style="width:${pct}%"></span></div>
-    <div class="unit-foot"><span>${pct}% bajarildi</span><span onclick="openUnit('${esc(u)}')" style="cursor:pointer;color:var(--green);font-weight:700">O'rganish →</span></div>
+    <div class="unit-foot"><span>${pct}% bajarildi</span><span onclick="openUnit('${esc(u)}')" style="cursor:pointer;color:var(--green);font-weight:700">Mashq →</span></div>
     <div class="unit-actions">
       <button class="btn soft" onclick="openUnit('${esc(u)}')">Mashq</button>
       <button class="btn outline" onclick="document.getElementById('${uid}').click()">📥 Excel</button>
@@ -234,7 +433,6 @@ function renderUnits(){
     ? units().map(unitCard).join('')
     : '<div class="empty" style="grid-column:1/-1">Hali unit yo\'q. Birinchi unitni qo\'shing.</div>';
 }
-
 function openUnit(u){ selectedUnit = u; $('gameUnit').value = u; showPage('games'); }
 
 function refresh(){
@@ -243,30 +441,26 @@ function refresh(){
   $('statUnits').textContent = us.length;
   $('statLearned').textContent = words.filter(w => w.learned).length;
   $('statAccuracy').textContent = (answerCount ? Math.round(correctCount / answerCount * 100) : 0) + '%';
-  $('homeUnits').innerHTML = us.slice(0,3).map(unitCard).join('') || '<div class="empty" style="grid-column:1/-1">Boshlash uchun kitobingizdan so\'zlar qo\'shing.</div>';
+  $('homeUnits').innerHTML = us.slice(0,3).map(unitCard).join('') || '<div class="empty" style="grid-column:1/-1">Boshlash uchun so\'zlar qo\'shing.</div>';
   const opts = '<option value="all">Barcha unitlar</option>' + us.map(u => `<option value="${esc(u)}">${esc(u)}</option>`).join('');
-  $('gameUnit').innerHTML = opts;
-  $('gameUnit').value = selectedUnit;
+  $('gameUnit').innerHTML = opts; $('gameUnit').value = selectedUnit;
   $('wordUnitFilter').innerHTML = opts;
-  renderUnits();
-  renderWords();
+  renderUnits(); renderWords();
 }
 
 async function addWord(){
   const unit = $('unitName').value.trim();
   const en = $('englishWord').value.trim();
   const uz = $('uzbekWord').value.trim();
-  if(!unit || !en || !uz){ toast("Unit, inglizcha so'z va tarjimani kiriting"); return; }
+  if(!unit || !en || !uz){ toast("Barcha maydonlarni to'ldiring"); return; }
   if(words.some(w => w.unit.toLowerCase() === unit.toLowerCase() && w.en.toLowerCase() === en.toLowerCase())){
-    toast("Bu so'z ushbu unitda bor"); return;
+    toast("Bu so'z ushbu unitda allaqachon bor"); return;
   }
   const { data, error } = await sb.from('words').insert({ unit, en, uz }).select().single();
   if(error){ toast('Xatolik: ' + error.message); return; }
   words.push({ id:data.id, unit:data.unit, en:data.en, uz:data.uz, learned:false });
-  $('englishWord').value = '';
-  $('uzbekWord').value = '';
-  refresh();
-  toast("So'z muvaffaqiyatli saqlandi!");
+  $('englishWord').value = ''; $('uzbekWord').value = '';
+  refresh(); toast("So'z saqlandi!");
 }
 
 function renderWords(){
@@ -278,15 +472,14 @@ function renderWords(){
   );
   $('wordList').innerHTML = arr.length
     ? arr.map(w => `<div class="word-row"><div><strong>${esc(w.en)}</strong><div class="small muted">${esc(w.unit)}</div></div><span>${esc(w.uz)}</span><button class="icon-btn" onclick="deleteWord('${w.id}')">×</button></div>`).join('')
-    : '<div class="empty">So\'z topilmadi yoki hali lug\'at bo\'sh.</div>';
+    : '<div class="empty">So\'z topilmadi yoki lug\'at bo\'sh.</div>';
 }
 
 async function deleteWord(id){
   const { error } = await sb.from('words').delete().eq('id', id);
   if(error){ toast('Xatolik: ' + error.message); return; }
   words = words.filter(w => String(w.id) !== String(id));
-  refresh();
-  toast("So'z o'chirildi");
+  refresh(); toast("O'chirildi");
 }
 
 async function markLearned(w){
@@ -296,105 +489,145 @@ async function markLearned(w){
   refresh();
 }
 
-/* ============ UNITGA EXCEL/CSV YUKLASH ============ */
-
+/* ============ EXCEL YUKLASH VA DUBLIKATLARNI TOZALASH ============ */
 async function uploadToUnit(event, unitName){
-  const file = event.target.files[0];
-  event.target.value = '';
-  if(!file || !unitName) return;
+  const input = event.target;
+  const file = input.files[0];
+  input.value = '';
+  if(!file) return;
+
+  toast("Fayl tahlil qilinmoqda: " + file.name);
 
   try{
-    let rows;
-    if(file.name.toLowerCase().endsWith('.csv')){
-      const txt = await file.text();
-      rows = parseCSV(txt);
-    } else {
-      if(!window.XLSX){ await loadSheetJS(); }
-      const data = await file.arrayBuffer();
-      const wb = XLSX.read(data, { type:'array' });
-      rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header:1, defval:'' });
+    const rows = await extractRows(file);
+    if(!rows.length) throw new Error("Fayl bo'sh yoki o'qib bo'lmadi.");
+
+    const parsed = detectColumns(rows);
+    if(!parsed.length) throw new Error("Fayldan so'zlar topilmadi. Iltimos, ustunlarni tekshiring.");
+
+    // 1. Dublikatlarni tozalash (Bazadagi + Fayl ichidagi)
+    const existingInDb = new Set(words.filter(w => w.unit.toLowerCase() === unitName.toLowerCase()).map(w => w.en.toLowerCase().trim()));
+    const seenInFile = new Set();
+    const toInsert = [];
+
+    for(const p of parsed){
+      const key = p.en.toLowerCase().trim();
+      if(!key) continue;
+      if(existingInDb.has(key) || seenInFile.has(key)) continue; // Dublikatni o'tkazib yuborish
+      
+      seenInFile.add(key);
+      toInsert.push({ unit: unitName, en: p.en, uz: p.uz });
     }
 
-    // Fayl ustunlarini aniqlash: odatda English / Uzbek / (Unit).
-    // Unit ustuni e'tiborga olinmaydi — hammasi tanlangan unitga qo'shiladi.
-    const cleaned = [];
-    for(let i = 0; i < rows.length; i++){
-      const r = rows[i];
-      if(!r || !r.length) continue;
-      const vals = r.map(x => String(x ?? '').trim());
-      // Sarlavha qatorini o'tkazib yuborish
-      if(i === 0){
-        const j = vals.join(' ').toLowerCase();
-        if(/(unit|english|ingliz)/.test(j) && /(uzbek|o'zbek|tarjima)/.test(j)) continue;
-        if(vals[0].toLowerCase() === 'english' || vals[1]?.toLowerCase() === 'uzbek') continue;
-      }
-      // Ustunlarni aniqlash: 3 ta ustun bo'lsa [Unit, English, Uzbek], 2 ta bo'lsa [English, Uzbek]
-      let en, uz;
-      if(vals.length >= 3 && /unit/i.test(vals[0])){ en = vals[1]; uz = vals[2]; }
-      else if(vals.length >= 3){ en = vals[1]; uz = vals[2]; }
-      else if(vals.length === 2){ en = vals[0]; uz = vals[1]; }
-      else { en = vals[0]; uz = vals[1] || ''; }
-      if(!en || !uz) continue;
-      cleaned.push({ unit: unitName, en, uz });
+    if(!toInsert.length) {
+      toast("Yangi so'z topilmadi. Fayldagi barcha so'zlar bazada mavjud.");
+      return;
     }
-
-    // Dublikatlarni filtrlash
-    const toInsert = cleaned.filter(c =>
-      !words.some(w => w.unit.toLowerCase() === unitName.toLowerCase() && w.en.toLowerCase() === c.en.toLowerCase()) &&
-      !cleaned.slice(0, cleaned.indexOf(c)).some(x => x.en.toLowerCase() === c.en.toLowerCase())
-    );
-
-    if(!toInsert.length){ toast("Yangi so'z topilmadi (hammasi mavjud yoki fayl bo'sh)"); return; }
 
     const { error } = await sb.from('words').insert(toInsert);
     if(error) throw error;
+
     await loadWords();
-    toast(toInsert.length + " ta so'z «" + unitName + "» ga qo'shildi");
+    toast("✅ " + toInsert.length + " ta yangi so'z qo'shildi. Dublikatlar tozalandi.");
   } catch(err){
     console.error(err);
-    toast("Faylni o'qishda xatolik: " + (err.message || err));
+    toast("Xatolik: " + (err.message || err));
   }
 }
 
-/* ============ EXCEL/CSV HELPERS ============ */
-
-function parseCSV(text){
-  return text.replace(/^\uFEFF/, '').split(/\r?\n/).filter(Boolean).map(line => {
-    const out = []; let cur = '', q = false;
-    for(let i = 0; i < line.length; i++){
-      const c = line[i];
-      if(c === '"' && line[i+1] === '"'){ cur += '"'; i++; }
-      else if(c === '"') q = !q;
-      else if((c === ',' || c === ';') && !q){ out.push(cur); cur = ''; }
-      else cur += c;
-    }
-    out.push(cur);
-    return out;
-  });
+async function extractRows(file){
+  if(file.name.toLowerCase().endsWith('.csv')){
+    const txt = await file.text();
+    return txt.replace(/^\uFEFF/, '').split(/\r?\n/).filter(Boolean).map(line => {
+      const out = []; let cur = '', q = false;
+      for(let i = 0; i < line.length; i++){
+        const c = line[i];
+        if(c === '"' && line[i+1] === '"'){ cur += '"'; i++; }
+        else if(c === '"') q = !q;
+        else if((c === ',' || c === ';') && !q){ out.push(cur); cur = ''; }
+        else cur += c;
+      }
+      out.push(cur); return out;
+    });
+  }
+  
+  if(!window.XLSX){
+    await new Promise((res, rej) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';
+      s.onload = res; s.onerror = () => rej(new Error("Excel kutubxonasi yuklanmadi"));
+      document.head.appendChild(s);
+    });
+  }
+  
+  const buf = await file.arrayBuffer();
+  const wb = XLSX.read(buf, { type: 'array' });
+  const ws = wb.Sheets[wb.SheetNames[0]];
+  return XLSX.utils.sheet_to_json(ws, { header: 1, defval: '', raw: false });
 }
 
-function loadSheetJS(){
-  return new Promise((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';
-    s.onload = resolve;
-    s.onerror = () => reject(new Error('Excel kutubxonasi yuklanmadi'));
-    document.head.appendChild(s);
-  });
+function detectColumns(rows){
+  const result = [];
+  let startIdx = 0;
+  for(let i = 0; i < Math.min(rows.length, 3); i++){
+    const joined = rows[i].map(x => String(x).toLowerCase()).join(' ');
+    if(/(english|ingliz|uzbek|o'zbek|tarjima|unit)/.test(joined)){ startIdx = i + 1; break; }
+  }
+  for(let i = startIdx; i < rows.length; i++){
+    const r = rows[i].map(x => String(x ?? '').trim());
+    if(r.every(v => !v)) continue;
+    const nonEmpty = r.filter(v => v !== '');
+    if(nonEmpty.length < 2) continue;
+
+    let en, uz;
+    if(r.length >= 3 && /^unit/i.test(r[0])){ en = r[1]; uz = r[2]; }
+    else { en = r[0]; uz = r[1]; }
+
+    if(!/[a-zA-Z]/.test(en)) continue;
+    if(/^(english|ingliz|so'z|word)$/i.test(en)) continue;
+    result.push({ en, uz });
+  }
+  return result;
 }
 
-/* ============ GAMES ============ */
+/* ============ AQLLI ESLATMALAR (SMART NUDGES) ============ */
+function scheduleNudge(){
+  setInterval(() => {
+    if(words.length < 3) return;
+    if($('smartNudge').classList.contains('show')) return;
+    if(Math.random() > 0.3) return; // 30% ehtimol bilan chiqadi
 
+    // O'rganilmagan so'zlar orasidan tasodifiy tanlash
+    const unlearned = words.filter(w => !w.learned);
+    if(!unlearned.length) return;
+    
+    currentNudgeWord = unlearned[Math.floor(Math.random() * unlearned.length)];
+    $('nudgeWord').textContent = currentNudgeWord.en;
+    $('nudgeUz').textContent = currentNudgeWord.uz;
+    $('smartNudge').classList.add('show');
+  }, 45000); // Har 45 soniyada tekshiradi
+}
+
+async function nudgeAction(isKnown){
+  $('smartNudge').classList.remove('show');
+  if(!currentNudgeWord) return;
+
+  if(isKnown){
+    toast("Zo'ring! " + currentNudgeWord.en + " o'rganilganlarga qo'shildi.");
+    await markLearned(currentNudgeWord);
+  } else {
+    toast("Tushunarli, " + currentNudgeWord.en + " so'zini takrorlash kerak.");
+  }
+  currentNudgeWord = null;
+}
+
+/* ============ O'YINLAR ============ */
 function renderGameOptions(){ if(!$('gameUnit').querySelector('option')) refresh(); }
-
-function getDeck(){
-  return words.filter(w => selectedUnit === 'all' || w.unit === selectedUnit).slice().sort(() => Math.random() - .5);
-}
+function getDeck(){ return words.filter(w => selectedUnit === 'all' || w.unit === selectedUnit).slice().sort(() => Math.random() - .5); }
 
 function startGame(type){
-  deck = getDeck();
-  idx = 0; flipped = false; score = 0; matchSelected = null; matched = 0;
-  if(deck.length < 2 && !['flash','type','speak','listen'].includes(type)){ toast("Bu o'yin uchun kamida 2 ta so'z kerak"); return; }
+  deck = getDeck(); idx = 0; flipped = false; score = 0; matchSelected = null; matched = 0;
+  if(deck.length < 2 && !['flash','type','speak','listen'].includes(type)){ toast("Kamida 2 ta so'z kerak"); return; }
   if(!deck.length){ toast("Avval so'z qo'shing"); showPage('add'); return; }
   showPage('games');
   const labels = { flash:'Flashcard', quiz:'Tarjima testi', reverse:'Teskari tarjima', type:'Yozib topish', listen:'Eshitib topish', speak:'Ovozli javob', match:'Juftini top' };
@@ -408,18 +641,17 @@ function startGame(type){
 }
 
 function speak(text){
-  if(!('speechSynthesis' in window)){ toast('Brauzer ovoz chiqarishni qo\'llamaydi'); return; }
+  if(!('speechSynthesis' in window)) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
-  u.lang = 'en-US'; u.rate = .85;
-  speechSynthesis.speak(u);
+  u.lang = 'en-US'; u.rate = .85; speechSynthesis.speak(u);
 }
 
 function progressLine(){ return `<div class="game-meta"><span>${Math.min(idx+1, deck.length)} / ${deck.length}</span><span>To'g'ri: ${score}</span></div>`; }
 
 function drawFlash(){
   const w = deck[idx];
-  $('playArea').innerHTML = progressLine() + `<div class="flashcard" onclick="flipFlash()"><div class="bigword">${flipped ? esc(w.uz) : esc(w.en)}</div><small>${flipped ? 'Tarjimasi' : "Tarjimani ko'rish uchun bosing"}</small></div><div class="game-controls"><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 Talaffuz</button><button class="btn soft" onclick="markLearned(deck[idx]);nextFlash()">Bilaman</button><button class="btn" onclick="nextFlash()">Keyingi →</button></div>`;
+  $('playArea').innerHTML = progressLine() + `<div class="flashcard" onclick="flipFlash()"><div class="bigword">${flipped ? esc(w.uz) : esc(w.en)}</div><small>${flipped ? 'Tarjimasi' : "Ko'rish uchun bosing"}</small></div><div class="game-controls" style="display:flex;gap:10px;justify-content:center"><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 Talaffuz</button><button class="btn soft" onclick="markLearned(deck[idx]);nextFlash()">Bilaman</button><button class="btn" onclick="nextFlash()">Keyingi →</button></div>`;
 }
 function flipFlash(){ flipped = !flipped; drawFlash(); }
 function nextFlash(){ idx++; flipped = false; if(idx >= deck.length){ finishGame(); return; } drawFlash(); }
@@ -429,24 +661,19 @@ function drawQuiz(type){
   const correct = type === 'quiz' ? w.uz : w.en;
   const question = type === 'quiz' ? w.en : w.uz;
   const opts = [correct, ...deck.filter(x => x.id !== w.id).slice(0,3).map(x => type === 'quiz' ? x.uz : x.en)].sort(() => Math.random() - .5);
-  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(question)}</div><div class="subquestion">${type === 'quiz' ? "To'g'ri tarjimani tanlang" : "Inglizcha so'zni tanlang"}</div><div class="answer-options">${opts.map(o => `<button onclick="chooseAnswer(this,'${esc(o).replace(/'/g,"\\'")}','${esc(correct).replace(/'/g,"\\'")}','${type}')">${esc(o)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="game-controls"><button class="btn" id="nextBtn" disabled onclick="nextQuiz('${type}')">Keyingi →</button></div>`;
+  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(question)}</div><div class="subquestion">To'g'ri javobni tanlang</div><div class="answer-options">${opts.map(o => `<button onclick="chooseAnswer(this,'${esc(o).replace(/'/g,"\\'")}','${esc(correct).replace(/'/g,"\\'")}','${type}')">${esc(o)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="game-controls" style="display:flex;justify-content:center"><button class="btn" id="nextBtn" disabled onclick="nextQuiz('${type}')">Keyingi →</button></div>`;
 }
 
 function chooseAnswer(btn, val, correct, type){
-  const buttons = document.querySelectorAll('.answer-options button');
-  buttons.forEach(b => b.disabled = true);
+  document.querySelectorAll('.answer-options button').forEach(b => b.disabled = true);
   answerCount++;
   if(val === correct){
-    score++; correctCount++;
-    btn.classList.add('correct');
-    markLearned(deck[idx]);
-    $('feedback').textContent = "Ajoyib! To'g'ri javob.";
-    $('feedback').style.color = 'var(--green)';
+    score++; correctCount++; btn.classList.add('correct'); markLearned(deck[idx]);
+    $('feedback').textContent = "Ajoyib! To'g'ri javob."; $('feedback').style.color = 'var(--green)';
   } else {
     btn.classList.add('wrong');
-    buttons.forEach(b => { if(b.textContent === correct) b.classList.add('correct'); });
-    $('feedback').textContent = "To'g'ri javob: " + correct;
-    $('feedback').style.color = '#b94737';
+    document.querySelectorAll('.answer-options button').forEach(b => { if(b.textContent === correct) b.classList.add('correct'); });
+    $('feedback').textContent = "To'g'ri javob: " + correct; $('feedback').style.color = '#b94737';
   }
   $('nextBtn').disabled = false;
 }
@@ -454,13 +681,13 @@ function nextQuiz(type){ idx++; if(idx >= deck.length) finishGame(); else drawQu
 
 function drawType(){
   const w = deck[idx];
-  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(w.uz)}</div><div class="subquestion">Inglizcha so'zni yozing</div><input id="typedAnswer" class="field" style="width:100%;max-width:380px;margin:22px auto;text-align:center;font-size:19px" placeholder="English word..." onkeydown="if(event.key==='Enter')checkType()"><div class="feedback" id="feedback"></div><div class="game-controls"><button class="btn" onclick="checkType()">Tekshirish</button><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 Javobni eshitish</button></div>`;
+  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(w.uz)}</div><div class="subquestion">Inglizcha so'zni yozing</div><input id="typedAnswer" class="field" style="width:100%;max-width:380px;margin:22px auto;text-align:center;font-size:19px" placeholder="English word..." onkeydown="if(event.key==='Enter')checkType()"><div class="feedback" id="feedback"></div><div class="game-controls" style="display:flex;justify-content:center"><button class="btn" onclick="checkType()">Tekshirish</button><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 Eshitish</button></div>`;
   $('typedAnswer').focus();
 }
 function checkType(){
   const w = deck[idx];
   const v = $('typedAnswer').value.trim().toLowerCase();
-  if(!v){ toast('Javobni yozing'); return; }
+  if(!v) return;
   answerCount++;
   if(v === w.en.toLowerCase()){ score++; correctCount++; markLearned(w); $('feedback').textContent = "To'g'ri! Barakalla."; $('feedback').style.color = 'var(--green)'; }
   else { $('feedback').textContent = "To'g'ri javob: " + w.en; $('feedback').style.color = '#b94737'; }
@@ -470,7 +697,7 @@ function nextType(){ idx++; if(idx >= deck.length) finishGame(); else drawType()
 
 function drawListen(){
   const w = deck[idx];
-  $('playArea').innerHTML = progressLine() + `<div class="game-icon" style="margin:25px auto;cursor:pointer" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">♫</div><div class="question">Qaysi so'zni eshitdingiz?</div><div class="subquestion">Ovozni tinglash uchun yashil belgini bosing</div><div class="answer-options">${[w, ...deck.filter(x => x.id !== w.id).slice(0,3)].sort(() => Math.random() - .5).map(x => `<button onclick="chooseListen(this,'${esc(x.id)}','${esc(w.id)}')">${esc(x.uz)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="game-controls"><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">Qayta eshitish</button><button class="btn" id="nextBtn" disabled onclick="nextListen()">Keyingi →</button></div>`;
+  $('playArea').innerHTML = progressLine() + `<div class="game-icon" style="margin:25px auto;cursor:pointer;width:60px;height:60px;font-size:30px" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">♫</div><div class="question">Qaysi so'zni eshitdingiz?</div><div class="answer-options">${[w, ...deck.filter(x => x.id !== w.id).slice(0,3)].sort(() => Math.random() - .5).map(x => `<button onclick="chooseListen(this,'${esc(x.id)}','${esc(w.id)}')">${esc(x.uz)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="game-controls" style="display:flex;justify-content:center"><button class="btn outline" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">Qayta eshitish</button><button class="btn" id="nextBtn" disabled onclick="nextListen()">Keyingi →</button></div>`;
 }
 function chooseListen(btn, id, correct){
   document.querySelectorAll('.answer-options button').forEach(b => b.disabled = true);
@@ -483,27 +710,23 @@ function nextListen(){ idx++; if(idx >= deck.length) finishGame(); else drawList
 
 function drawSpeak(){
   const w = deck[idx];
-  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(w.en)}</div><div class="subquestion">Bu so'zning o'zbekcha tarjimasini ovoz chiqarib ayting</div><button class="btn outline" style="margin:15px" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 So'zni eshitish</button><div><button class="btn" onclick="listenAnswer()">🎙 Mikrofonni yoqish</button></div><div class="feedback" id="feedback" style="margin-top:17px"></div><div class="small muted" id="heard"></div><div class="game-controls"><button class="btn soft" onclick="showTranslation()">Tarjimani ko'rsatish</button><button class="btn" onclick="nextSpeak()">Keyingi →</button></div><p class="file-help">Mikrofon orqali javob berish Chrome yoki Edge brauzerida ishlaydi. Ruxsat so'ralsa, mikrofonni yoqing.</p>`;
+  $('playArea').innerHTML = progressLine() + `<div class="question">${esc(w.en)}</div><div class="subquestion">O'zbekcha tarjimasini ovoz chiqarib ayting</div><button class="btn outline" style="margin:15px" onclick="speak('${esc(w.en).replace(/'/g,"\\'")}')">🔊 Eshitish</button><div><button class="btn" onclick="listenAnswer()">🎙 Mikrofonni yoqish</button></div><div class="feedback" id="feedback" style="margin-top:17px"></div><div class="small muted" id="heard"></div><div class="game-controls" style="display:flex;justify-content:center"><button class="btn soft" onclick="showTranslation()">Tarjima</button><button class="btn" onclick="nextSpeak()">Keyingi →</button></div>`;
 }
 function listenAnswer(){
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if(!SR){ $('feedback').textContent = "Bu brauzer ovoz tanishni qo'llamaydi. Chrome yoki Edge dan foydalaning."; return; }
+  if(!SR){ $('feedback').textContent = "Brauzer ovoz tanishni qo'llamaydi. Chrome ishlating."; return; }
   if(recognition) recognition.stop();
-  recognition = new SR();
-  recognition.lang = 'uz-UZ';
-  recognition.interimResults = false;
+  recognition = new SR(); recognition.lang = 'uz-UZ'; recognition.interimResults = false;
   recognition.onresult = e => {
     const said = e.results[0][0].transcript;
     $('heard').textContent = "Siz aytdingiz: " + said;
     const target = deck[idx].uz.toLowerCase(), spoken = said.toLowerCase();
-    const ok = spoken.includes(target) || target.includes(spoken);
     answerCount++;
-    if(ok){ score++; correctCount++; markLearned(deck[idx]); $('feedback').textContent = "Ajoyib! Javobingiz to'g'ri deb topildi."; $('feedback').style.color = 'var(--green)'; }
-    else { $('feedback').textContent = "Yaxshi urinish! To'g'ri tarjima: " + deck[idx].uz; $('feedback').style.color = '#b94737'; }
+    if(spoken.includes(target) || target.includes(spoken)){ score++; correctCount++; markLearned(deck[idx]); $('feedback').textContent = "Ajoyib! To'g'ri."; $('feedback').style.color = 'var(--green)'; }
+    else { $('feedback').textContent = "To'g'ri tarjima: " + deck[idx].uz; $('feedback').style.color = '#b94737'; }
   };
-  recognition.onerror = () => { $('feedback').textContent = 'Mikrofonga ruxsat berilganini tekshiring.'; };
-  recognition.start();
-  $('feedback').textContent = 'Tinglayapman...';
+  recognition.onerror = () => { $('feedback').textContent = 'Mikrofonga ruxsat bering.'; };
+  recognition.start(); $('feedback').textContent = 'Tinglayapman...';
 }
 function showTranslation(){ $('feedback').textContent = 'Tarjimasi: ' + deck[idx].uz; }
 function nextSpeak(){ if(recognition) recognition.stop(); idx++; if(idx >= deck.length) finishGame(); else drawSpeak(); }
@@ -511,137 +734,73 @@ function nextSpeak(){ if(recognition) recognition.stop(); idx++; if(idx >= deck.
 function drawMatch(){
   const batch = deck.slice(0, Math.min(6, deck.length));
   const cards = [...batch.map(w => ({ id:w.id, type:'en', text:w.en })), ...batch.map(w => ({ id:w.id, type:'uz', text:w.uz }))].sort(() => Math.random() - .5);
-  $('playArea').innerHTML = `<div class="game-meta"><span>Topilgan juftliklar: ${matched} / ${batch.length}</span><span>Juftlarni tanlang</span></div><div class="match-grid">${cards.map(c => `<button data-id="${esc(c.id)}" data-type="${c.type}" onclick="pickMatch(this)">${esc(c.text)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><button class="btn" onclick="finishGame()">Yakunlash</button>`;
+  $('playArea').innerHTML = `<div class="game-meta"><span>Topilgan: ${matched} / ${batch.length}</span><span>Juftlarni tanlang</span></div><div class="match-grid">${cards.map(c => `<button data-id="${esc(c.id)}" data-type="${c.type}" onclick="pickMatch(this)">${esc(c.text)}</button>`).join('')}</div><div class="feedback" id="feedback"></div><div class="game-controls" style="display:flex;justify-content:center"><button class="btn" onclick="finishGame()">Yakunlash</button></div>`;
 }
 function pickMatch(btn){
   if(btn.classList.contains('matched') || btn.classList.contains('selected')) return;
   if(!matchSelected){ matchSelected = btn; btn.classList.add('selected'); return; }
-  const first = matchSelected;
-  first.classList.remove('selected');
+  const first = matchSelected; first.classList.remove('selected');
   if(first.dataset.id === btn.dataset.id && first.dataset.type !== btn.dataset.type){
     first.classList.add('matched'); btn.classList.add('matched'); matched++; score++;
-    if(matched === Math.min(6, deck.length)){ $('feedback').textContent = "Zo'r! Barcha juftliklar topildi."; setTimeout(finishGame, 900); }
-  } else {
-    $('feedback').textContent = "Bu juftlik mos kelmadi. Yana urinib ko'ring.";
-  }
+    if(matched === Math.min(6, deck.length)){ $('feedback').textContent = "Zo'r! Hammasi topildi."; setTimeout(finishGame, 1000); }
+  } else { $('feedback').textContent = "Mos kelmadi. Yana urinib ko'ring."; }
   matchSelected = null;
 }
 
 function finishGame(){
-  $('playArea').innerHTML = `<div style="padding:25px"><div class="game-icon" style="margin:auto">✓</div><div class="question">Mashq tugadi!</div><p class="muted">Natijangiz: <b>${score}</b> ta to'g'ri javob</p><p class="muted small">Davom eting — takrorlash yodlashga yordam beradi.</p><button class="btn" onclick="startGame('quiz')">Yana mashq qilish</button> <button class="btn soft" onclick="showPage('home')">Bosh sahifa</button></div>`;
+  $('playArea').innerHTML = `<div style="padding:25px"><div class="game-icon" style="margin:auto;font-size:30px;width:60px;height:60px">✓</div><div class="question">Mashq tugadi!</div><p class="muted">Natijangiz: <b>${score}</b> ta to'g'ri javob</p><button class="btn" onclick="startGame('quiz')" style="margin-top:15px">Yana o'ynash</button></div>`;
   refresh();
 }
 
-/* ============ EXPORT / IMPORT (ADD PAGE) ============ */
-
 function downloadTemplate(){
-  const csv = 'Unit,English,Uzbek\nUnit 1,apple,olma\nUnit 1,book,kitob\nUnit 2,beautiful,chiroyli';
-  downloadBlob('\ufeff' + csv, 'essential-namuna.csv', 'text/csv;charset=utf-8');
+  const csv = 'Unit,English,Uzbek\nUnit 1,apple,olma\nUnit 1,book,kitob';
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' })); a.download = 'namuna.csv'; a.click();
 }
 function exportCSV(){
   const csv = 'Unit,English,Uzbek\n' + words.map(w => [w.unit, w.en, w.uz].map(x => '"' + String(x).replace(/"/g, '""') + '"').join(',')).join('\n');
-  downloadBlob('\ufeff' + csv, 'essential-sozlar.csv', 'text/csv;charset=utf-8');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' })); a.download = 'sozlar.csv'; a.click();
 }
-function downloadBlob(data, name, type){
-  const a = document.createElement('a');
-  const url = URL.createObjectURL(new Blob([data], { type }));
-  a.href = url; a.download = name; a.click();
-  URL.revokeObjectURL(url);
-}
-
 async function clearAll(){
-  if(!confirm("Barcha so'zlar va natijalarni o'chirishni xohlaysizmi?")) return;
+  if(!confirm("Barcha so'zlarni o'chirishni xohlaysizmi?")) return;
   const { error } = await sb.from('words').delete().neq('id', 0);
   if(error){ toast('Xatolik: ' + error.message); return; }
-  words = []; correctCount = 0; answerCount = 0;
-  refresh();
-  toast("Ma'lumotlar o'chirildi");
+  words = []; correctCount = 0; answerCount = 0; refresh(); toast("Tozalandi");
 }
 
 $('excelFile').addEventListener('change', async e => {
-  const file = e.target.files[0];
-  if(!file) return;
+  // "Qo'shish" sahifasidagi umumiy yuklash (Unitni o'zi aniqlaydi)
+  const file = e.target.files[0]; if(!file) return;
   try{
-    let rows;
-    if(file.name.toLowerCase().endsWith('.csv')){
-      const txt = await file.text();
-      rows = parseCSV(txt);
-    } else {
-      if(!window.XLSX){ await loadSheetJS(); }
-      const data = await file.arrayBuffer();
-      const wb = XLSX.read(data, { type:'array' });
-      rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header:1, defval:'' });
-    }
+    const rows = await extractRows(file);
+    const parsed = detectColumns(rows);
     const toInsert = [];
-    for(let i = 0; i < rows.length; i++){
-      const r = rows[i];
-      if(!r || r.length < 3) continue;
-      const vals = r.slice(0,3).map(x => String(x ?? '').trim());
-      if(i === 0 && /unit/i.test(vals[0]) && /english/i.test(vals[1])) continue;
-      const [unit, en, uz] = vals;
-      if(!unit || !en || !uz) continue;
-      if(words.some(w => w.unit.toLowerCase() === unit.toLowerCase() && w.en.toLowerCase() === en.toLowerCase())) continue;
-      toInsert.push({ unit, en, uz });
+    const existing = new Set(words.map(w => w.unit.toLowerCase() + '|' + w.en.toLowerCase()));
+    const seen = new Set();
+    
+    for(const p of parsed){
+      let unit = "Umumiy";
+      if(rows.some(r => /^unit/i.test(r[0]))) {
+         // Agar faylda unit ustuni bo'lsa
+         const row = rows.find(r => r.includes(p.en));
+         if(row && row[0]) unit = String(row[0]);
+      }
+      const key = unit.toLowerCase() + '|' + p.en.toLowerCase();
+      if(existing.has(key) || seen.has(key)) continue;
+      seen.add(key); toInsert.push({ unit, en: p.en, uz: p.uz });
     }
+    
     if(toInsert.length){
       const { error } = await sb.from('words').insert(toInsert);
       if(error) throw error;
-      await loadWords();
-      toast(toInsert.length + " ta so'z yuklandi");
-    } else {
-      toast("Yangi so'z topilmadi");
-    }
+      await loadWords(); toast(toInsert.length + " ta so'z yuklandi");
+    } else toast("Yangi so'z topilmadi.");
     e.target.value = '';
-  } catch(err){
-    console.error(err);
-    toast("Faylni o'qishda xatolik. Ustunlarni tekshiring.");
-  }
+  } catch(err) { toast("Xato: " + err.message); }
 });
-
-/* ============ PWA: MANIFEST + SERVICE WORKER ============ */
-
-// Manifest va icon'larni dinamik yaratish (qo'shimcha fayl kerak emas)
-(function setupPWA(){
-  // Manifestni inline blob sifatida ulash
-  try{
-    if(!document.querySelector('link[rel="manifest"]')){
-      const manifest = {
-        name: "Essential Words",
-        short_name: "Essential",
-        description: "Ingliz tilini o'yin orqali o'rganish",
-        start_url: ".",
-        scope: ".",
-        display: "standalone",
-        background_color: "#f5faf6",
-        theme_color: "#16834a",
-        orientation: "portrait",
-        icons: [
-          { src: "icon-192.png", sizes: "192x192", type: "image/png", purpose: "any maskable" },
-          { src: "icon-512.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }
-        ]
-      };
-      const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
-      const link = document.createElement('link');
-      link.rel = 'manifest';
-      link.href = URL.createObjectURL(blob);
-      document.head.appendChild(link);
-    }
-  } catch(e){ console.warn('Manifest xatosi', e); }
-
-  // Service worker ro'yxatdan o'tkazish (faqat http/https da)
-  if('serviceWorker' in navigator && location.protocol !== 'file:'){
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js').catch(err => {
-        console.warn('SW xatosi:', err.message);
-      });
-    });
-  }
-})();
-
-/* ============ INIT ============ */
 
 (async function init(){
   await loadWords();
+  scheduleNudge(); // Aqlli eslatmalarni yoqish
 })();
 </script>
 </body>
