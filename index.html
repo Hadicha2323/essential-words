@@ -24,6 +24,7 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 
+/* KOMPYUTER UCHUN YON MENYU */
 .sidebar{width:250px;background:#fff;border-right:1px solid var(--line);padding:26px 18px;display:flex;flex-direction:column;gap:25px;position:fixed;inset:0 auto 0 0;z-index:5;transition:transform 0.3s ease}
 .brand{display:flex;align-items:center;gap:12px;padding:0 8px}
 .brandmark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#2eaa64,#0c6639);display:grid;place-items:center;color:white;box-shadow:0 8px 18px #16834a33;animation:float 3s ease-in-out infinite}
@@ -144,22 +145,7 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 .user-item{display:flex;justify-content:space-between;align-items:center;padding:10px;background:#f8fbf9;border-radius:10px;margin-bottom:8px}
 .user-item .dot{width:10px;height:10px;background:#39ae68;border-radius:50%;box-shadow:0 0 8px #39ae68}
 
-@media(max-width:860px){
-  .sidebar{display:none}.main{margin-left:0;width:100%;padding:16px 14px 100px}
-  .mobile-nav{display:block}.topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}
-  .profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}
-  .hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}
-  .stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}
-  .units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}
-  .word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}
-  .form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}
-  .question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}
-  .flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}
-  .section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}
-  .toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}
-  .install-banner{flex-wrap:wrap}.install-banner .ib-actions{margin-left:0;width:100%}.install-banner .ib-actions button{flex:1}
-  .smart-nudge{bottom:80px;left:14px;right:14px;max-width:none}
-}
+/* MOBIL QURILMALAR UCHUN MENYU (PASTKI) */
 .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:10}
 .mobile-nav-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;max-width:600px;margin:0 auto}
 .mobile-nav button{background:transparent;color:#71847a;padding:8px 4px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;font-weight:600}
@@ -174,6 +160,27 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 .install-banner .ib-actions button{padding:8px 13px;border-radius:9px;font-size:12px;font-weight:700}
 .install-banner .ib-close{background:#ffffff20;color:#fff}
 .install-banner .ib-go{background:#fff;color:var(--deep)}
+
+/* TELEFON UCHUN MAXSUS SOZLAMALAR */
+@media(max-width:860px){
+  .sidebar{display:none;}
+  .main{margin-left:0;width:100%;padding:16px 14px 110px;} /* 110px pastdan joy tashlaymiz */
+  .mobile-nav{display:block;} /* Pastki menyu faqat telefonda ko'rinadi */
+  .topbar{margin-bottom:18px}.topbar h1{font-size:20px}.eyebrow{font-size:10px}
+  .profile{font-size:0;padding:8px}.profile .avatar{width:34px;height:34px}
+  .profile span:last-child{display:none;} /* Telefonda yozuv yashiriladi, faqat avatar turadi */
+  .hero{padding:22px 20px;border-radius:20px}.hero h2{font-size:21px}.hero p{font-size:13px}
+  .stats{grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 20px}.stat{padding:12px;gap:9px}.stat strong{font-size:17px}.stat small{font-size:10px}.stat-icon{width:34px;height:34px}
+  .units,.game-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}
+  .word-row{grid-template-columns:1fr auto;gap:6px;padding:10px 12px}.word-row > span{grid-column:1/-1;font-size:12px;color:var(--muted);margin-top:2px}
+  .form-grid{grid-template-columns:1fr}.form-item.wide{grid-column:auto}
+  .question{font-size:24px}.game-area{padding:18px 14px;border-radius:16px}.answer-options{grid-template-columns:1fr}
+  .flashcard .bigword{font-size:28px}.match-grid button{padding:14px 8px;font-size:13px}
+  .section-head{align-items:flex-start;gap:10px;flex-wrap:wrap}.section-head h3{font-size:15px}
+  .toolbar{gap:8px}.toolbar .field{flex:1;min-width:140px}.btn{padding:10px 15px;font-size:14px}
+  .install-banner{flex-wrap:wrap}.install-banner .ib-actions{margin-left:0;width:100%}.install-banner .ib-actions button{flex:1}
+  .smart-nudge{bottom:80px;left:14px;right:14px;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -229,7 +236,6 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 <main class="main">
  <header class="topbar">
    <div><div class="eyebrow">YOUR DAILY ENGLISH HABIT</div><h1 id="pageTitle">O'rganishni boshlaymiz!</h1></div>
-   <!-- Admin panel ochish uchun maxfiy tugma (Faqat "Mening lug'atim" yozuvi) -->
    <div class="profile" onclick="openAdminLogin()">
      <span class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span>
      <span id="topbarName">Mening lug'atim</span>
@@ -317,6 +323,7 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
  </section>
 </main>
 
+<!-- PASTKI MOBIL MENYU -->
 <nav class="mobile-nav">
   <div class="mobile-nav-inner">
     <button class="active" data-page="home" onclick="showPage('home')"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Bosh</button>
