@@ -229,7 +229,7 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 <main class="main">
  <header class="topbar">
    <div><div class="eyebrow">YOUR DAILY ENGLISH HABIT</div><h1 id="pageTitle">O'rganishni boshlaymiz!</h1></div>
-   <!-- Admin panel ochish uchun maxfiy tugma -->
+   <!-- Admin panel ochish uchun maxfiy tugma (Faqat "Mening lug'atim" yozuvi) -->
    <div class="profile" onclick="openAdminLogin()">
      <span class="avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></span>
      <span id="topbarName">Mening lug'atim</span>
@@ -382,7 +382,7 @@ function saveName() {
   trackOnline();
 }
 
-/* ============ ONLAYN FOYDALANUVCHILARNI KUZATISH (ADMIN) ============ */
+/* ============ ONLAYN FOYDALANUVCHILARNI KUZATISH ============ */
 async function trackOnline() {
   if(!currentUserName) return;
   try {
@@ -396,7 +396,7 @@ async function trackOnline() {
 function startOnlineTracking() {
   if(onlineInterval) clearInterval(onlineInterval);
   trackOnline();
-  onlineInterval = setInterval(trackOnline, 30000); // Har 30 soniyada yangilanadi
+  onlineInterval = setInterval(trackOnline, 30000);
 }
 
 /* ============ ADMIN LOGIN VA PANEL ============ */
